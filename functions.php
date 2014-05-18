@@ -3,10 +3,10 @@
 /* COLOR SCHEME
 -----------------------------------------
 
-grey 1			#b2a8ad
+grey 1			#55606e
 light blue 1	#b3e7fa
 light blue 2	#89daf8
-magenta			#d11847
+magenta			#dfe8ff
 
 */
 
@@ -23,8 +23,12 @@ add_action( 'after_setup_theme', 'cor_theme_setup' );
 /* loads scripts & libraries */
 function cor_theme_load_scripts() {
 	if ( ! is_admin() ) {
-		wp_register_script( 'jquery-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.js', array( 'jquery' ), '2014.05.01.1', true );
-		wp_register_script( 'header-image', get_template_directory_uri() . '/js/header-image.js', array( 'jquery', 'jquery-scrollTo' ), '2014.05.01.1', true );
+		wp_deregister_script( 'avia-shortcodes' );
+		wp_register_script( 'avia-shortcodes', get_stylesheet_directory_uri() . '/js/shortcodes.js', array( 'jquery' ), '1.1', true );
+		wp_enqueue_script( 'avia-shortcodes' );
+
+		wp_register_script( 'jquery-scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.js', array( 'jquery' ), '2014.05.01.1', true );
+		wp_register_script( 'header-image', get_stylesheet_directory_uri() . '/js/header-image.js', array( 'jquery', 'jquery-scrollTo' ), '2014.05.01.1', true );
 
 		wp_enqueue_script( 'jquery-scrollTo' );
 		wp_enqueue_script( 'header-image' );
@@ -63,13 +67,21 @@ function cor_add_fonts(){
 			'Maven Pro'=>'Maven Pro',
 			'Nunito'=>'Nunito:300,600',
 			'Open Sans'=>'Open Sans:400,600',
-			'Raleway'=>'Raleway:100'
+			'Raleway'=>'Raleway'
 		)
 	);
 }
 add_filter( 'avf_google_content_font', 'cor_add_fonts' );
 
-/* add self defined styles in place of a default style */
+
+/**
+ * Google Web Fonts done right
+ */
+function cor_google_fonts() {
+	wp_register_style( 'p1lle-google-webfonts', 'http://fonts.googleapis.com/css?family=Raleway:700,900,400,300,200,100', array(), '2014-05-18' );
+	wp_enqueue_style( 'p1lle-google-webfonts' );
+}
+add_action( 'wp_enqueue_scripts', 'cor_google_fonts' );
 
 
 /* add fonts */
@@ -77,18 +89,18 @@ function cor_add_style( $styles ){
 	unset( $styles['Vine'] );
 
 	$styles['Tramprennen'] = array(
-		"style"=> "background-color:#b2a8ad;",
-		"default_font" => "Open Sans",
-		"google_webfont" => "Raleway:200,400",
+		"style"=> "background-color:#55606e;",
+		"default_font" => "Helvetica",
+		"google_webfont" => "Raleway",
 		"color_scheme"	=> "Tramprennen",
 
 		// header
-		"colorset-header_color-bg"				=> "#b2a8ad",
-		"colorset-header_color-bg2"				=> "#b2a8ad",
-		"colorset-header_color-primary"			=> "#ffffff",
-		"colorset-header_color-secondary"		=> "#d11847",
-		"colorset-header_color-color"			=> "#ffffff",
-		"colorset-header_color-border"			=> "#d11847",
+		"colorset-header_color-bg"				=> "#55606e",
+		"colorset-header_color-bg2"				=> "#55606e",
+		"colorset-header_color-primary"			=> "#e1e1e1",
+		"colorset-header_color-secondary"		=> "#ffffff",
+		"colorset-header_color-color"			=> "#e1e1e1",
+		"colorset-header_color-border"			=> "#55606e",
 		"colorset-header_color-img"				=> "",
 		"colorset-header_color-customimage"		=> "",
 		"colorset-header_color-pos" 			=> "top center",
@@ -97,11 +109,11 @@ function cor_add_style( $styles ){
 
 		// main
 		"colorset-main_color-bg"				=> "#ffffff",
-		"colorset-main_color-bg2"				=> "#eeeeee",
-		"colorset-main_color-primary"			=> "#000000",
-		"colorset-main_color-secondary"			=> "#d11847",
-		"colorset-main_color-color"				=> "#000000",
-		"colorset-main_color-border"			=> "#dddddd",
+		"colorset-main_color-bg2"				=> "#e1e1e1",
+		"colorset-main_color-primary"			=> "#e2007a",
+		"colorset-main_color-secondary"			=> "#c79a52",
+		"colorset-main_color-color"				=> "#4a4d54",
+		"colorset-main_color-border"			=> "#e1e1e1",
 		"colorset-main_color-img"				=> "",
 		"colorset-main_color-customimage"		=> "",
 		"colorset-main_color-pos" 				=> "top center",
@@ -109,12 +121,12 @@ function cor_add_style( $styles ){
 		"colorset-main_color-attach" 			=> "scroll",
 
 		// Alternate
-		"colorset-alternate_color-bg"				=> "#b3e7fa",
-		"colorset-alternate_color-bg2"				=> "#89daf8",
-		"colorset-alternate_color-primary"			=> "#000000",
-		"colorset-alternate_color-secondary"		=> "#d11847",
-		"colorset-alternate_color-color"			=> "#000000",
-		"colorset-alternate_color-border"			=> "#35c2f6",
+		"colorset-alternate_color-bg"				=> "#dfe8ff",
+		"colorset-alternate_color-bg2"				=> "#92b1ff",
+		"colorset-alternate_color-primary"			=> "#e2007a",
+		"colorset-alternate_color-secondary"		=> "#c79a52",
+		"colorset-alternate_color-color"			=> "#4a4d54",
+		"colorset-alternate_color-border"			=> "#92b1ff",
 		"colorset-alternate_color-img"				=> "",
 		"colorset-alternate_color-customimage"		=> "",
 		"colorset-alternate_color-pos" 				=> "top center",
@@ -122,12 +134,12 @@ function cor_add_style( $styles ){
 		"colorset-alternate_color-attach" 			=> "scroll",
 
 		// Slideshow
-		"colorset-slideshow_color-bg"			=> "#fcfcfc",
-		"colorset-slideshow_color-bg2"			=> "#ffffff",
-		"colorset-slideshow_color-primary"		=> "888888",
-		"colorset-slideshow_color-secondary"	=> "#d11847",
-		"colorset-slideshow_color-color"		=> "#888888",
-		"colorset-slideshow_color-border"		=> "#ebebeb",
+		"colorset-slideshow_color-bg"			=> "#e1e1e1",
+		"colorset-slideshow_color-bg2"			=> "#e1e1e1",
+		"colorset-slideshow_color-primary"		=> "#e2007a",
+		"colorset-slideshow_color-secondary"	=> "#c79a54",
+		"colorset-slideshow_color-color"		=> "#4a4d54",
+		"colorset-slideshow_color-border"		=> "#e1e1e1",
 		"colorset-slideshow_color-img"			=> "",
 		"colorset-slideshow_color-customimage"	=> "",
 		"colorset-slideshow_color-pos" 			=> "top center",
@@ -135,12 +147,12 @@ function cor_add_style( $styles ){
 		"colorset-slideshow_color-attach" 		=> "scroll",
 
 		// Footer
-		"colorset-footer_color-bg"				=> "#989194",
-		"colorset-footer_color-bg2"				=> "#989194",
+		"colorset-footer_color-bg"				=> "#55606e",
+		"colorset-footer_color-bg2"				=> "#55606e",
 		"colorset-footer_color-primary"			=> "#ffffff",
-		"colorset-footer_color-secondary"		=> "#d11847",
+		"colorset-footer_color-secondary"		=> "#dfe8ff",
 		"colorset-footer_color-color"			=> "#ffffff",
-		"colorset-footer_color-border"			=> "#807877",
+		"colorset-footer_color-border"			=> "#4a4d54",
 		"colorset-footer_color-img"				=> "",
 		"colorset-footer_color-customimage"		=> "",
 		"colorset-footer_color-pos" 			=> "top center",
@@ -148,12 +160,12 @@ function cor_add_style( $styles ){
 		"colorset-footer_color-attach" 			=> "scroll",
 
 		// Socket
-		"colorset-socket_color-bg"				=> "#b2a8ad",
-		"colorset-socket_color-bg2"				=> "#b2a8ad",
-		"colorset-socket_color-primary"			=> "#000000",
-		"colorset-socket_color-secondary"		=> "#d11847",
-		"colorset-socket_color-color"			=> "#000000",
-		"colorset-socket_color-border"			=> "#806e6e",
+		"colorset-socket_color-bg"				=> "#4a4d54",
+		"colorset-socket_color-bg2"				=> "#4a4d54",
+		"colorset-socket_color-primary"			=> "#e2007a",
+		"colorset-socket_color-secondary"		=> "#c79a54",
+		"colorset-socket_color-color"			=> "#dfe8ff",
+		"colorset-socket_color-border"			=> "#55606e",
 		"colorset-socket_color-img"				=> "",
 		"colorset-socket_color-customimage"		=> "",
 		"colorset-socket_color-pos" 			=> "top center",
@@ -163,7 +175,7 @@ function cor_add_style( $styles ){
 		//body bg
 		"color-body_style"						=> "stretched",
 		"color-body_color"						=> "#ffffff",
-		"color-body_fontcolor"					=> "#ffffff",
+		"color-body_fontcolor"					=> "#4a4d54",
 		"color-body_attach"						=> "scroll",
 		"color-body_repeat"						=> "repeat",
 		"color-body_pos"						=> "top center",

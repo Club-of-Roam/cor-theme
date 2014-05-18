@@ -30,7 +30,7 @@ function setHomeSlideshowHeight() {
 // Center Home Slideshow Text
 ///////////////////////////////
 
-function centerHomeImageCaption() {
+function centerHomeCaption() {
 	jQuery('.home .slideshow .details').each(function(id){
 		jQuery(this).css('margin-top','-'+((jQuery(this).actual('height')/2)-catptionOffset)+'px');
 		jQuery(this).show();
@@ -65,7 +65,7 @@ jQuery(document).ready(function(){
 
 	jQuery(window).smartresize(function(){
 		setHomeSlideshowHeight();
-		centerFlexCaption();
+		centerHomeCaption();
 	});
 
 	jQuery(window).scroll(function() {
