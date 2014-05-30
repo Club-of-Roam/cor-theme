@@ -1,12 +1,12 @@
 /*
- Theme Name:   Tramprennen
+ Theme Name:   Club of Roam | Tramprennen 2014
  Theme URI:    http://tramprennen.org
  Description:  Theme for tramprennen.org, child theme of Kriesi's enfold
- Author:       Johnannes Pilkahn, Ingo Kraft
+ Author:       Johnannes Pilkahn, Merle Zweiundvierzig, Walter Mutter
  Author URI:   http://tramprennen.org
  Author Email: info@tramprennen.org
  Template:     enfold
- Version:      5.0
+ Version:      1.0
  Tags:         hitchhiking rocks
  Text Domain:  cor
 */
@@ -295,14 +295,6 @@ span.post-meta-infos {
 .main_color .small-preview,
 .main_color .fallback-post-type-icon {
 	background: #e2007a;
-}
-
-
-/* IMAGES
------------------------------------------ */
-
-.avia_textblock p img {
-	max-width: 50%;
 }
 
 
