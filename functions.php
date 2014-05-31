@@ -27,11 +27,13 @@ function cor_theme_load_scripts() {
 		wp_register_script( 'avia-shortcodes', get_stylesheet_directory_uri() . '/js/shortcodes.js', array( 'jquery' ), '1.1', true );
 		wp_enqueue_script( 'avia-shortcodes' );
 
-		wp_register_script( 'jquery-scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.js', array( 'jquery' ), '2014.05.01.1', true );
+		wp_register_script( 'cor-miscellaneous', get_stylesheet_directory_uri() . '/js/cor-miscellaneous.js', array( 'jquery' ), '2014.05.30.1', true );
 		wp_register_script( 'header-image', get_stylesheet_directory_uri() . '/js/header-image.js', array( 'jquery', 'jquery-scrollTo' ), '2014.05.01.1', true );
+		wp_register_script( 'jquery-scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.js', array( 'jquery' ), '2014.05.01.1', true );
 
+		wp_enqueue_script( 'cor-miscellaneous' );
+		//wp_enqueue_script( 'header-image' );
 		wp_enqueue_script( 'jquery-scrollTo' );
-		wp_enqueue_script( 'header-image' );
 	}
 }
 add_action ( 'wp_enqueue_scripts', 'cor_theme_load_scripts' );
@@ -84,11 +86,13 @@ function cor_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'cor_google_fonts' );
 
 
-/* add fonts */
+/**
+ * Pre-Selection for Theme Options
+ */
 function cor_add_style( $styles ){
 	unset( $styles['Vine'] );
 
-	$styles['Tramprennen'] = array(
+	$styles['Club of Roam'] = array(
 		"style"=> "background-color:#55606e;",
 		"default_font" => "Helvetica",
 		"google_webfont" => "Raleway",

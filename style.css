@@ -41,7 +41,6 @@ div.container .content {
 }
 
 
-
 /* TYPO
 ----------------------------------------- */
 
@@ -151,6 +150,9 @@ div.read-more-link a,
 	color: #4a4d54;
 	text-decoration: none;
 }
+a.contains-image {
+	border: none !important;
+}
 
 a:hover,
 a:active,
@@ -165,17 +167,14 @@ div.read-more-link a:focus,
 	text-decoration: none;
 }
 
-#scroll-top-link {
-	background: #4a4d54;
-	color: #e1e1e1;
-	border-color: #4a4d54;
-}
-#scroll-top-link:hover {
-	background: #e2007a;
-	color: #ffffff;
-	border-color: #e1e1e1;
+strong,
+.main_color strong {
+	color: inherit !important;
 }
 
+
+/* BLOGPOSTS
+----------------------------------------- */
 
 
 /* HEADER
@@ -278,23 +277,19 @@ div#header-image {
 }
 
 
-/* BLOGPOSTS
+/* THEME-SPECIFIC ELEMENTS
 ----------------------------------------- */
 
-div.read-more-link {
-	font-size: 1.5em;
+#scroll-top-link {
+	background: #4a4d54;
+	color: #e1e1e1;
+	border-color: #4a4d54;
 }
 
-span.post-meta-infos {
-	font-size: 1.2em;
-	line-height: 1.916666667;
-}
-
-.main_color .rounded-container,
-#top .main_color .pagination a:hover,
-.main_color .small-preview,
-.main_color .fallback-post-type-icon {
+#scroll-top-link:hover {
 	background: #e2007a;
+	color: #ffffff;
+	border-color: #e1e1e1;
 }
 
 
