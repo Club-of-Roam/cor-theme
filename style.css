@@ -27,7 +27,7 @@ body {
 }
 
 
-/* LAYOUT
+/* LAYOUT | MAIN
 ----------------------------------------- */
 
 body .column-top-margin {
@@ -46,6 +46,10 @@ div.container .content {
 
 /* Overrides */
 
+p {
+	margin: 0;
+}
+
 span.special_amp,
 .main-color span.special_amp {
 	font-family: 'Raleway', Helvetica, Arial, Verdana, Geneva, sans-serif;
@@ -61,6 +65,7 @@ div.av-special-heading-h4[style],
 div.av-special-heading-h5[style],
 div.av-special-heading-h6[style] {
 	padding: 0 !important;
+	margin-top: 2.3em;
 }
 
 div#main ol,
@@ -176,6 +181,44 @@ strong,
 /* BLOGPOSTS
 ----------------------------------------- */
 
+.entry-content-wrapper .post-title {
+	/* Mixture of h3/h4 & h5/h6 */
+	font-size: 1.8em;
+	font-weight: 200;
+	line-height: 1.277777777778;
+	padding: 0 0 1.277777777778em 0;
+	margin: 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.widgettitle {
+	/* In accordance with h5/h6 */
+	font-size: 1.8em;
+	font-weight: 200;
+	line-height: 1.277777777778;
+	padding: 0 0 1.277777777778em 0;
+	margin: 0;
+	text-transform: none;
+	text-align: left;
+}
+
+span.post-meta-infos {
+	font-size: 1.2em;
+	line-height: 1.916666667;
+}
+
+div.read-more-link {
+	font-size: 1.5em;
+}
+
+.main_color .rounded-container,
+#top .main_color .pagination a:hover,
+.main_color .small-preview,
+.main_color .fallback-post-type-icon {
+	background: #e2007a;
+}
+
 
 /* HEADER
 ----------------------------------------- */
@@ -277,7 +320,7 @@ div#header-image {
 }
 
 
-/* THEME-SPECIFIC ELEMENTS
+/* THEME-SPECIFIC ELEMENTS & UTILITY SHIT
 ----------------------------------------- */
 
 #scroll-top-link {
@@ -290,6 +333,15 @@ div#header-image {
 	background: #e2007a;
 	color: #ffffff;
 	border-color: #e1e1e1;
+}
+
+body .aligncenter,
+.entry-content-wrapper a:hover .aligncenter {
+	clear: both;
+	display: block;
+	margin: 1em auto;
+	padding: 1.3em 0;
+	position: relative;
 }
 
 
