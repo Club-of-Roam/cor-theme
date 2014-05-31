@@ -3,10 +3,10 @@
 /* COLOR SCHEME
 -----------------------------------------
 
-grey 1			#55606e
-light blue 1	#b3e7fa
-light blue 2	#89daf8
-magenta			#dfe8ff
+grey 1              #55606e
+light blue 1	    #b3e7fa
+light blue 2	    #89daf8
+magenta             #dfe8ff
 
 */
 
@@ -38,6 +38,7 @@ function cor_theme_load_scripts() {
 }
 add_action ( 'wp_enqueue_scripts', 'cor_theme_load_scripts' );
 
+
 /* MODIFICATIONS OF PARENT
 ----------------------------------------- */
 
@@ -45,7 +46,7 @@ add_action ( 'wp_enqueue_scripts', 'cor_theme_load_scripts' );
 function cor_unset_copyright(){
     return '';
 }
-add_filter( 'kriesi_backlink', 'unset_copyright' );
+add_filter( 'kriesi_backlink', 'cor_unset_copyright' );
 
 /* add fonts */
 function cor_add_fonts(){

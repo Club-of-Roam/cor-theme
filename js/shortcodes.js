@@ -2196,7 +2196,7 @@ $.fn.avia_sc_toggle = function(options)
 			{
 				if(content.css('visibility') != "hidden")
 				{
-					content.slideUp(200, function()
+					content.slideUp(500, function()
 					{
 						content.removeClass('active_tc').attr({style:''});
 						win.trigger('av-height-change');
@@ -2208,14 +2208,14 @@ $.fn.avia_sc_toggle = function(options)
 				{
 					if(container.is('.toggle_close_all'))
 					{
-						allContent.not(content).slideUp(200, function()
+						allContent.not(content).slideUp(500, function()
 						{
 							$(this).removeClass('active_tc').attr({style:''});
 							scroll_to_viewport();
 						});
 						heading.removeClass('activeTitle');
 					}
-					content.addClass('active_tc').slideDown(200,
+					content.addClass('active_tc').slideDown(500,
 
 					function()
 					{

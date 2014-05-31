@@ -35,6 +35,10 @@ body .column-top-margin {
 	margin-bottom: 0;
 }
 
+div.container main.content {
+	padding: 4.6em 0 0;
+}
+
 div.container .content {
 	padding-top: 2.3em;
 	padding-bottom: 2.3em;
@@ -65,7 +69,7 @@ div.av-special-heading-h4[style],
 div.av-special-heading-h5[style],
 div.av-special-heading-h6[style] {
 	padding: 0 !important;
-	margin-top: 2.3em;
+	margin-top: 0;
 }
 
 div#main ol,
@@ -101,11 +105,11 @@ h1,
 h2,
 body div.av-special-heading h1.av-special-heading-tag,
 body div.av-special-heading h2.av-special-heading-tag {
-	font-size: 6em;
+	font-size: 5.5em;
 	font-weight: 100;
-	line-height: 1.15;
-	padding: .183333333em 0 .2em 0;
-	margin: 0;
+	line-height: 1.254545455;
+	padding: 0 0 .836363636em 0;
+	margin: -.127272727em 0 0;
 	text-transform: uppercase;
 	text-align: center;
 	float: none;
@@ -120,7 +124,7 @@ body div.av-special-heading h4.av-special-heading-tag,
 	font-weight: 200;
 	line-height: 1.703703704;
 	padding: 0 0 .851851852em 0;
-	margin: 0;
+	margin: -.351851852em 0 0;
 	text-transform: uppercase;
 	text-align: left;
 }
@@ -136,7 +140,7 @@ body div.av-special-heading h6.av-special-heading-tag {
 	font-weight: 400;
 	line-height: 1.277777777778;
 	padding: 0 0 1.277777777778em 0;
-	margin: 0;
+	margin: -.138888888889em 0 0;
 	text-transform: none;
 	text-align: left;
 }
@@ -320,6 +324,14 @@ div#header-image {
 }
 
 
+/* FOOTER
+----------------------------------------- */
+
+#footer .no-news-thumb {
+	display: none;
+}
+
+
 /* THEME-SPECIFIC ELEMENTS & UTILITY SHIT
 ----------------------------------------- */
 
@@ -342,6 +354,58 @@ body .aligncenter,
 	margin: 1em auto;
 	padding: 1.3em 0;
 	position: relative;
+}
+
+
+/* ACCORDION
+----------------------------------------- */
+
+.js_active div#main p.toggler {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 10px 3px 11px 35px;
+    position: relative;
+    top: 1px;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+span.toggle_icon {
+	top: 14px;
+	left: 11px;
+}
+div#main p.toggler,
+div#main p.toggler span.toggle_icon,
+div#main p.toggler span.toggle_icon span {
+	border-color: #bbbbbb;
+}
+div#main p.toggler:hover span.toggle_icon,
+div#main p.toggler:hover span.toggle_icon span {
+	border-color: #e2007a;
+}
+div#main .toggle_content {
+	padding: 2.3em 2.2em;
+	margin: 0;
+	border-bottom: none;
+	border-color: #bbbbbb;
+}
+div#main .toggle_content p:last-child {
+	padding-bottom: 0;
+}
+div.togglecontainer {
+	margin: 0;
+}
+section.av_toggle_section:last-child div.single_toggle {
+	margin: 0 0 4.6em;
+}
+.active_tc.toggle_wrap {
+	display: none;
 }
 
 
