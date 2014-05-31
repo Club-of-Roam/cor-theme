@@ -116,7 +116,7 @@ function cor_add_style( $styles ){
 		"colorset-main_color-bg"				=> "#ffffff",
 		"colorset-main_color-bg2"				=> "#e1e1e1",
 		"colorset-main_color-primary"			=> "#e2007a",
-		"colorset-main_color-secondary"			=> "#c79a52",
+		"colorset-main_color-secondary"			=> "#e2007a",
 		"colorset-main_color-color"				=> "#4a4d54",
 		"colorset-main_color-border"			=> "#e1e1e1",
 		"colorset-main_color-img"				=> "",
@@ -196,4 +196,6 @@ add_filter( 'avf_skin_options', 'cor_add_style' );
 /* SECONDARY FILES
 ----------------------------------------- */
 
-require_once( 'landing-page.php' );
+// none so far
+
+?>

@@ -39,9 +39,21 @@ div.container main.content {
 	padding: 4.6em 0 0;
 }
 
-div.container .content {
+div.container div.content {
 	padding-top: 2.3em;
-	padding-bottom: 2.3em;
+	padding-bottom: 0;
+}
+
+img.el_before_av_heading {
+	padding-bottom: 4.6em;
+}
+
+#footer {
+	margin-top: 2.3em;
+}
+
+body #main {
+	background-color: #ffffff; /* bit of hack */
 }
 
 
@@ -50,7 +62,7 @@ div.container .content {
 
 /* Overrides */
 
-p {
+body p {
 	margin: 0;
 }
 
@@ -159,13 +171,23 @@ div.read-more-link a,
 	color: #4a4d54;
 	text-decoration: none;
 }
-a.contains-image {
+a.contains-image,
+header a {
 	border: none !important;
 }
 
 a:hover,
 a:active,
 a:focus,
+p a:hover,
+p a:active,
+p a:focus,
+li a:hover,
+li a:active,
+li a:focus,
+body .main_color a:hover,
+body .main_color a:active,
+body .main_color a:focus,
 div.read-more-link a:hover,
 div.read-more-link a:active,
 div.read-more-link a:focus,
@@ -179,6 +201,10 @@ div.read-more-link a:focus,
 strong,
 .main_color strong {
 	color: inherit !important;
+}
+
+.flex_column .widget .widgettitle {
+	margin: 0;
 }
 
 
@@ -331,8 +357,24 @@ div#header-image {
 /* FOOTER
 ----------------------------------------- */
 
+body #footer {
+	padding: 4.6em 0 2.3em;
+}
+
+body #footer .widget {
+	margin: 0 0 4.6em;
+}
+
 #footer .no-news-thumb {
 	display: none;
+}
+
+#footer .news-link {
+	border: none;
+}
+
+body #footer .widget_nav_menu li {
+	position: static;
 }
 
 
@@ -410,6 +452,18 @@ section.av_toggle_section:last-child div.single_toggle {
 }
 .active_tc.toggle_wrap {
 	display: none;
+}
+body .main_color .toggle_content,
+body .main_color .toggler:hover {
+	background-color: #dfe8ff;
+}
+
+
+/* LANDING PAGE
+----------------------------------------- */
+
+#top .scroll-down-link {
+	background-color: #e1e1e1;
 }
 
 
