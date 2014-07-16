@@ -1,0 +1,168 @@
+/*
+Styles for the
+login widget,
+registration, lost password & profile forms,
+as well as the user-panel at the top of the page:
+*/
+
+
+/* WIDGET & FORM WRAPPER
+----------------------------------------- */
+
+.login {
+	padding: 0;
+}
+.user-panel .login {
+	padding: 0;
+}
+.login h2 {
+	color: #d2853a;
+}
+div.login-widget {
+	overflow: hidden;
+}
+
+
+/* LINKS BENEATH WIDGET & FORMS
+----------------------------------------- */
+
+.tml-action-links {
+	margin-top: 0;
+}
+.tml-action-links a {
+	font-family: 'Titillium', Verdana, Helvetica, Arial, sans-serif;
+	font-size: 1.4em;
+	font-weight: 400;
+	color: #ffffff;
+	display: block;
+	line-height: 1;
+	padding-top: .5em
+}
+.no-touch .tml-action-links a:hover,
+.tml-action-links a:active {
+	color: #ffff00;
+	text-shadow: 0 0 1px #ffffff;
+}
+.top-bar .tml-action-links li {
+	padding: 0;
+	margin: 0;
+	float: left;
+	clear: both;
+}
+
+
+/* THE USER PANEL
+----------------------------------------- */
+
+.user-panel h2,
+.user-panel h2 a {
+	color: #d2853a;
+	margin: 5px 0 0;
+}
+.no-touch .user-panel h2 a:hover,
+.user-panel h2 a:active {
+	text-shadow: 0 0 5px #ffffff;
+}
+.user-panel h4 {
+	color: #ffffff;
+}
+.tml-user-links {
+	float: left;
+}
+.tml-user-links li {
+	display: inline;
+}
+.tml-user-links a {
+	font-family: GSC;
+	font-size: 1.6em;
+	font-weight: 400;
+	color: #ffffff;
+	display: inline-block;
+	line-height: 1;
+	padding: 5px 0 0 0;
+}
+.no-touch .tml-user-links a:hover,
+.tml-user-links a:active {
+	color: #ffffff;
+	text-shadow: 0 0 1px #ffffff;
+}
+
+
+/* PASSWORD SECTION OF
+ * REGISTRATION & LOST PASS FORM
+----------------------------------------- */
+
+.pass-row p {
+	font-size: 1em;
+	overflow: hidden;
+	padding-top: .4em;
+}
+.pass-row p:first-child {
+	padding-top: 0;
+}
+.pass-row p input {
+	padding-top: 0;
+}
+.pass-mail-row {
+	padding: 0;
+}
+.pass-mail-row p {
+	padding: .25em 0;
+}
+#pass-strength-result {
+	font-family: GS, 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	float: right !important; /* really? */
+	width: 48%; /* really? */
+    border: 2px solid #bbbbbb;
+	border-radius: 4px;
+	font-size: 1.2em;
+    margin: 0;
+    padding: .25em .166666667em; /* set the same as text inputs */
+    text-align: center;
+	color: #222222;
+}
+#pass-strength-result.strong,
+#pass-strength-result.short {
+    font-weight: 700;
+}
+#pass-strength-result {
+    background: #999999;
+}
+#pass-strength-result.short {
+    background-color: #f19fc1;
+    border-color: #e9619c !important;
+}
+#pass-strength-result.bad {
+    background-color: #e3cf9a;
+    border-color: #bba259 !important;
+}
+#pass-strength-result.good {
+    background-color: #d5ecf1;
+    border-color: #487f13 !important;
+}
+#pass-strength-result.strong {
+    background-color: #7ec5e0;
+    border-color: #82df29 !important;
+	color: #ffffff;
+}
+
+
+/* ANIMATIONS
+----------------------------------------- */
+
+.vca-user-links a,
+.tml-user-links a {
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+	-webkit-transition: opacity 0.1s;
+    -moz-transition: opacity 0.1s;
+    -ms-transition: opacity 0.1s;
+    -o-transition: opacity 0.1s;
+    transition: opacity 0.1s;
+}
+.vca-user-links a span {
+	-webkit-transition: all 0.3s;
+}
