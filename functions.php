@@ -23,17 +23,25 @@ add_action( 'after_setup_theme', 'cor_theme_setup' );
 /* loads scripts & libraries */
 function cor_theme_load_scripts() {
 	if ( ! is_admin() ) {
+		/* Adjustment of parent theme */
 		wp_deregister_script( 'avia-shortcodes' );
 		wp_register_script( 'avia-shortcodes', get_stylesheet_directory_uri() . '/js/shortcodes.js', array( 'jquery' ), '1.1', true );
 		wp_enqueue_script( 'avia-shortcodes' );
 
-		wp_register_script( 'cor-miscellaneous', get_stylesheet_directory_uri() . '/js/cor-miscellaneous.js', array( 'jquery' ), '2014.05.30.1', true );
+		/* Register custom scripts */
+		wp_register_script( 'cor-miscellaneous', get_stylesheet_directory_uri() . '/js/cor-miscellaneous.js', array( 'jquery' ), '2014-05-30-01', true );
 		wp_register_script( 'header-image', get_stylesheet_directory_uri() . '/js/header-image.js', array( 'jquery', 'jquery-scrollTo' ), '2014.05.01.1', true );
-		wp_register_script( 'jquery-scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.js', array( 'jquery' ), '2014.05.01.1', true );
+		wp_register_script( 'jquery-scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.js', array( 'jquery' ), '2014-05-01-01', true );
+		wp_register_script( 'pille-baseline-grid', get_stylesheet_directory_uri() . '/js/pille-baseline-grid.js', array( 'jquery' ), '2014-07-14-01', true );
+		wp_register_script( 'pille-form-styling', get_stylesheet_directory_uri() . '/js/pille-form-styling.js', array( 'jquery' ), '2014-07-14-01', true );
+		wp_register_script( 'pille-tooltip', get_stylesheet_directory_uri() . '/js/pille-tooltip.js', false, '2014-07-14-01', true );
 
 		wp_enqueue_script( 'cor-miscellaneous' );
 		//wp_enqueue_script( 'header-image' );
 		wp_enqueue_script( 'jquery-scrollTo' );
+		wp_enqueue_script( 'pille-baseline-grid' );
+		//wp_enqueue_script( 'pille-form-styling' );
+		wp_enqueue_script( 'pille-tooltip' );
 	}
 }
 add_action ( 'wp_enqueue_scripts', 'cor_theme_load_scripts' );
@@ -191,6 +199,28 @@ function cor_add_style( $styles ){
 	return $styles;
 }
 add_filter( 'avf_skin_options', 'cor_add_style' );
+
+
+/* LOG- IN/OUT LINKS
+----------------------------------------- */
+
+function cor_add_loginout_link( $items, $args )
+{
+	if ( $args->theme_location == 'avia' ) {
+		if ( is_user_logged_in() ) {
+			global $current_user;
+			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/profile" title="Edit your user profile & settings">' . $current_user->user_login . '</a></li>';
+		} else {
+			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/login" title="Login to tramprennen.org">Login</a></li>';
+		}
+	}
+    return $items;
+}
+add_filter( 'wp_nav_menu_items', 'cor_add_loginout_link', 99, 2 );
+
+
+global $sitepress; // if needed
+remove_action('show_user_profile', array($sitepress, 'show_user_options'));
 
 
 /* SECONDARY FILES
