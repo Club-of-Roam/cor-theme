@@ -1,6 +1,6 @@
 <div class="login" id="theme-my-login<?php $template->the_instance(); ?>">
 
-	<p class="message"><?php _e( 'Register to HitchHikingHub', 'hhh-theme' )  ?></p>
+	<h3><?php _e( 'Register to tramprennen.org', 'hhh-theme' )  ?></h3>
 	<?php $template->the_errors(); ?>
 
     <form name="registerform" id="registerform<?php $template->the_instance(); ?>" class="stand-alone-form" action="<?php $template->the_action_url( 'register' ); ?>" method="post">

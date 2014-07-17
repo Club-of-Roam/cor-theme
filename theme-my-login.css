@@ -29,16 +29,14 @@ div.login-widget {
 .tml-action-links {
 	margin-top: 0;
 }
-.tml-action-links a {
-	font-family: 'Titillium', Verdana, Helvetica, Arial, sans-serif;
-	font-size: 1.4em;
-	font-weight: 400;
-	color: #ffffff;
-	display: block;
-	line-height: 1;
-	padding-top: .5em
+.tml-action-links li {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0 !important;
 }
-.no-touch .tml-action-links a:hover,
+.tml-action-links a {
+}
+.tml-action-links a:hover,
 .tml-action-links a:active {
 	color: #ffff00;
 	text-shadow: 0 0 1px #ffffff;
@@ -93,9 +91,8 @@ div.login-widget {
 ----------------------------------------- */
 
 .pass-row p {
-	font-size: 1em;
+	font-size: 1em !important;
 	overflow: hidden;
-	padding-top: .4em;
 }
 .pass-row p:first-child {
 	padding-top: 0;
