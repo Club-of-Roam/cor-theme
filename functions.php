@@ -209,9 +209,10 @@ function cor_add_loginout_link( $items, $args )
 	if ( $args->theme_location == 'avia' ) {
 		if ( is_user_logged_in() ) {
 			global $current_user;
-			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/profile" title="Edit your user profile & settings">' . $current_user->user_login . '</a></li>';
+			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/profile" title="' . __( 'Edit your user profile & settings', 'cor-theme' ) . '">' . $current_user->user_login . '</a></li>';
+			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="' . wp_logout_url() . '" title="' . __( 'Leave', 'cor-theme' ) . '">' . __( 'Logout', 'cor-theme' ) . '</a></li>';
 		} else {
-			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/login" title="Login to tramprennen.org">Login</a></li>';
+			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/login" title="' . __( 'Login to tramprennen.org', 'cor-theme' ) . '">' . __( 'Login', 'cor-theme' ) . '</a></li>';
 		}
 	}
     return $items;
