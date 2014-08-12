@@ -482,17 +482,18 @@ label {
 .form-row p {
 	padding: 0;
 }
-input,
-textarea,
-select {
-/*	color: #76e5ff;
-	font-size: 1.6em;
-	vertical-align: baseline;
-	border: 2px solid #bbbbbb;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	background: transparent;*/
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="number"],
+.form-row input[type="tel"],
+.form-row input,
+.form-row input,
+.form-row textarea,
+.form-row select {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100% !important;
 }
 input[type="image"] {
 /*	border: none !important;
