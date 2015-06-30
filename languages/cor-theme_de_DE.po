@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CoR Theme\n"
+"POT-Creation-Date: 2015-06-30 13:09+0100\n"
+"PO-Revision-Date: 2015-06-30 13:10+0100\n"
+"Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
+"Language-Team: Pille <pille@tramprennen.org>\n"
+"Language: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;esc_attr__;esc_attr_e;__;_e;_x;"
+"_ex\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../login-form.php:3 ../functions.php:219
+msgid "Login"
+msgstr "Reinloggen"
+
+#: ../login-form.php:11 ../register-form.php:11 ../profile-form.php:29
+msgid "Username"
+msgstr "Benutzername"
+
+#: ../login-form.php:16
+msgid "Password"
+msgstr "Passwort"
+
+#: ../login-form.php:25
+msgid "Remember Me"
+msgstr "Erinnnere mich"
+
+#: ../login-form.php:30
+msgid "Log In"
+msgstr "Reinloggen"
+
+#: ../register-form.php:3
+msgid "Register to tramprennen.org"
+msgstr "Bei tramprennen.org registrieren"
+
+#: ../register-form.php:16 ../profile-form.php:42
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: ../register-form.php:23
+msgid "A password will be e-mailed to you."
+msgstr "Ein Passwort wird dir per E-Mail geschickt."
+
+#: ../register-form.php:27
+msgid "Register"
+msgstr "Registrieren"
+
+#: ../functions.php:213
+msgid "Edit your user profile & settings"
+msgstr "Dein Benutzerprofil &amp; Einstellungen"
+
+#: ../functions.php:215
+msgid "Submit race results"
+msgstr "Rennergebnisse abgeben"
+
+#: ../functions.php:215
+msgid "Submit Points"
+msgstr "Punkte abgeben"
+
+#: ../functions.php:217
+msgid "Leave"
+msgstr "Verlassen"
+
+#: ../functions.php:217
+msgid "Logout"
+msgstr "Rausloggen"
+
+#: ../functions.php:219
+msgid "Login to tramprennen.org"
+msgstr "In tramprennen.org reinloggen"
+
+#: ../resetpass-form.php:9
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: ../resetpass-form.php:14
+msgid "Confirm new password"
+msgstr "Neues Passwort bestätigen"
+
+#: ../resetpass-form.php:18
+msgid "Strength indicator"
+msgstr "Stärkeindikator"
+
+#: ../resetpass-form.php:21
+msgid ""
+"Hint: The password should be at least seven characters long. To make it "
+"stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
+"$ % ^ &amp; )."
+msgstr ""
+"Tipp: Das Passwort sollte mindestens sieben Zeichen lang sein. Damit es "
+"sicherer wird, benutze Groß- und Kleinbuchstaben, Zahlen und Symbole."
+
+#: ../resetpass-form.php:27
+msgid "Reset Password"
+msgstr "Passwort Zurücksetzen"
+
+#: ../lostpassword-form.php:9
+msgid "Username or E-mail:"
+msgstr "Benutzername oder E-Mail"
+
+#: ../lostpassword-form.php:16
+msgid "Get New Password"
+msgstr "Neues Passwort anfordern"
+
+#: ../profile-form.php:26
+msgid "Name"
+msgstr "Name"
+
+#: ../profile-form.php:29
+msgid "Your username cannot be changed."
+msgstr "Dein Benutzername kann nicht geändert werden."
+
+#: ../profile-form.php:32
+msgid "First name"
+msgstr "Vorname"
+
+#: ../profile-form.php:35
+msgid "Last name"
+msgstr "Nachname"
+
+#: ../profile-form.php:39
+msgid "Contact Info"
+msgstr "Kontakt Info"
+
+#: ../profile-form.php:58 ../profile-form.php:61
+msgid "New Password"
+msgstr "Neues Passwort"
+
+#: ../profile-form.php:60
+msgid ""
+"If you would like to change the password type a new one. Otherwise leave "
+"this blank."
+msgstr ""
+"Wenn du dein Passwort ändern willst, tippe ein neues ein. Sonst lasse das "
+"Feld leer."
+
+#: ../profile-form.php:64
+msgid "Repeat Password"
+msgstr "Passwort Wiederholen"
+
+#: ../profile-form.php:67
+msgid "Password Strength"
+msgstr "Passwort Stärke"
+
+#: ../profile-form.php:68
+msgid "Strength Indicator"
+msgstr "Stärke Indikator"
+
+#: ../profile-form.php:72
+msgid "Leave for good"
+msgstr "tramprennen.org verlassen"
+
+#: ../profile-form.php:75
+msgid "Delete my account permanently"
+msgstr "Mein Benutzerkonto unwiderruflich löschen"
+
+#: ../profile-form.php:87
+msgid ""
+"Do you really want to delete your account? This will be permanent and cannot "
+"be undone!"
+msgstr ""
+"Willst du dein Konto wirklich löschen? Dieser Vorgang kann nicht rückgängig "
+"gemacht werden..."
+
+#: ../profile-form.php:93
+msgid "Are you really a hundred years old???"
+msgstr "Bist du wirklich Hundert Jahre alt???"
+
+#: ../profile-form.php:99
+msgid "Have you really been born on January 1st, 1970?"
+msgstr "Wurdest du wirklich am ersten Januar 1970 geboren?"
+
+#: ../profile-form.php:105
+msgid "Update Profile"
+msgstr "Profil aktualisieren"
