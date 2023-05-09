@@ -6,7 +6,7 @@
  Author URI:   http://tramprennen.org
  Author Email: info@tramprennen.org
  Template:     enfold
- Version:      1.0
+ Version:      1.1
  Tags:         hitchhiking rocks
  Text Domain:  cor
 */
@@ -76,6 +76,7 @@ img.el_before_av_heading {
 }
 
 body #main {
+        word-wrap: break-word;
 	background-color: #ffffff; /* bit of a hack */
 }
 
@@ -227,6 +228,10 @@ body div.av-special-heading h6.av-special-heading-tag.top-space-more {
 body div.av-special-heading .av-special-heading-tag {
 	margin: 0;
 	float: none;
+}
+
+.avia-fullscreen-slider .avia-slide-wrap {
+    border-bottom: none;
 }
 
 p a,
@@ -466,6 +471,10 @@ body #footer .widget_nav_menu li {
 }
 .form-row:last-child {
 	margin: 0;
+}.form-row.no-margin-bottom {
+	margin: 0;
+}.form-row.hidden-field-row {
+	height: 0px;
 }
 .trap-row {
 	display: none !important;
@@ -623,9 +632,19 @@ form .form-row .form-img {
 #top input[type="url"],
 #top input[type="tel"],
 #top input[type="search"],
+#top input[type="date"],
 #top textarea,
 #top select {
 	margin-bottom: 0;
+}
+
+.check-row input[type="checkbox"] {
+	width: unset !important;
+	vertical-align: middle;
+}
+.check-row label {
+	margin-left: 5px;
+	vertical-align: middle;
 }
 
 
@@ -654,15 +673,15 @@ span.tip:active {
 ----------------------------------------- */
 
 #scroll-top-link {
-	background: #4a4d54;
+/*	background: #4a4d54;
 	color: #e1e1e1;
-	border-color: #4a4d54;
+	border-color: #4a4d54;*/
 }
 
 #scroll-top-link:hover {
-	background: #e2007a;
+/*	background: #e2007a;
 	color: #ffffff;
-	border-color: #e1e1e1;
+	border-color: #e1e1e1;*/
 }
 
 body .aligncenter,
@@ -674,6 +693,12 @@ body .aligncenter,
 	position: relative;
 }
 
+/* TAB
+----------------------------------------- */
+
+.js_active .tab {
+    font-size: 1.5em;
+}
 
 /* ACCORDION
 ----------------------------------------- */

@@ -28,12 +28,14 @@
 
 		<div class="form-row">
 			<input type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php esc_attr_e( 'Log In', 'hhh-theme' ); ?>" />
-			<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'login' ); ?>" />
+			<!--<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'login' ); ?>" /> -->
 			<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 			<input type="hidden" name="action" value="login" />
 		</div>
 
 	</form>
+	
+	<p align="center"> <a href="https://tramprennen.org/privacy-data-policy/">Privacy data police</a> </p>
 
 	<?php $template->the_action_links( array( 'login' => false ) ); ?>
 

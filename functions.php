@@ -89,7 +89,7 @@ add_filter( 'avf_google_content_font', 'cor_add_fonts' );
  * Google Web Fonts done right
  */
 function cor_google_fonts() {
-	wp_register_style( 'p1lle-google-webfonts', 'http://fonts.googleapis.com/css?family=Raleway:700,900,400,300,200,100', array(), '2014-05-18' );
+	wp_register_style( 'p1lle-google-webfonts', 'https://fonts.googleapis.com/css?family=Raleway:700,900,400,300,200,100', array(), '2014-05-18' );
 	wp_enqueue_style( 'p1lle-google-webfonts' );
 }
 add_action( 'wp_enqueue_scripts', 'cor_google_fonts' );
@@ -210,13 +210,13 @@ function cor_add_loginout_link( $items, $args )
 		if ( is_user_logged_in() ) {
 			global $current_user;
 			if ( ! in_array( 'route', $current_user->roles ) ) {
-				$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/profile" title="' . __( 'Edit your user profile & settings', 'cor-theme' ) . '">' . $current_user->user_login . '</a></li>';
+				$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="'.get_home_url().'/profile" title="' . __( 'Edit your user profile & settings', 'cor-theme' ) . '">' . $current_user->user_login . '</a></li>';
 			} else {
-				$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a style="font-weight:bold;" href="http://tramprennen.org/submit-points/" title="' . __( 'Submit race results', 'cor-theme' ) . '">' . __( 'Submit Points', 'cor-theme' ) . '</a></li>';
+				$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a style="font-weight:bold;" href="'.get_home_url().'/submit-points/" title="' . __( 'Submit race results', 'cor-theme' ) . '">' . __( 'Submit Points', 'cor-theme' ) . '</a></li>';
 			}
 			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="' . wp_logout_url() . '" title="' . __( 'Leave', 'cor-theme' ) . '">' . __( 'Logout', 'cor-theme' ) . '</a></li>';
 		} else {
-			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="http://tramprennen.org/login" title="' . __( 'Login to tramprennen.org', 'cor-theme' ) . '">' . __( 'Login', 'cor-theme' ) . '</a></li>';
+			$items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level "><a href="'.get_home_url().'/login" title="' . __( 'Login to tramprennen.org', 'cor-theme' ) . '">' . __( 'Login', 'cor-theme' ) . '</a></li>';
 		}
 	}
     return $items;
@@ -224,29 +224,175 @@ function cor_add_loginout_link( $items, $args )
 add_filter( 'wp_nav_menu_items', 'cor_add_loginout_link', 99, 2 );
 
 
+function remove_admin_bar() {
+	if (current_user_can('administrator')) {
+            show_admin_bar(true);
+	}  else {
+            show_admin_bar(false);
+        }
+} 
+add_action('after_setup_theme', 'remove_admin_bar');
+
+////Add additional fields to the User Profile
+//function modify_contact_methods($profile_fields) {
+//
+//	// Add new fields
+//	$profile_fields['shirt_size'] = 'Your Shirt size';
+//        $profile_fields['public_mobile_inf'] = 'Could we give our partner Ortel Mobile your personal Information?';
+//        $profile_fields['addressMobile'] = 'Address for Ortel';
+//
+//	return $profile_fields;
+//}
+//add_filter('user_contactmethods', 'modify_contact_methods');
+
 global $sitepress; // if needed
 remove_action('show_user_profile', array($sitepress, 'show_user_options'));
 
+/* Regestration custom fields
+----------------------------------------- */
+
+/* Generate Errors */
+function tml_registration_errors( $errors ) {
+	if ( !isset( $_POST['privacy_data_police'] ) )
+		$errors->add( 'empty_first_name', '<strong>ERROR</strong>: Please accept the privacy data policy.' );
+	return $errors;
+}
+add_filter( 'registration_errors', 'tml_registration_errors' );
+
+/* Save user meta from regestration */
+function tml_user_register( $user_id ) {
+	var_dump( $_POST['privacy_data_police'] );
+	if ( isset( $_POST['privacy_data_police'] ) ) {
+		update_user_meta( $user_id, 'privacy_data_police', true );
+	}
+}
+add_action( 'user_register', 'tml_user_register' );
+
+/* Save privacy data police after login */
+function check_privacy_data_option() {
+	$user_id = get_current_user_id();
+	$user_privacy = get_user_meta($user_id, 'privacy_data_police');
+
+	if ( ! is_user_logged_in() || 
+		! current_user_can( 'edit_user', $user_id ) || 
+		$user_privacy[0] == '1' ) {
+		return false;
+	}
+	
+	if ( isset( $_POST['privacy_data_police_action'] ) && $_POST['privacy_data_police_action'] == 'Delete my account' ) {
+		require_once(ABSPATH.'wp-admin/includes/user.php' );
+		$user_id = get_current_user_id();
+		
+		wp_delete_user( $user_id );
+		$overlay = '<div class="overlay_data_police main_color">
+			<div class="innerlay_data_police">
+				<h3> Pleae wait, your account will be deleted soon! </h3>
+				
+			</div>
+		</div>';
+	
+		echo $overlay;
+			
+		wp_enqueue_script( 'h3-mgmt-redirect' );
+
+		wp_localize_script('h3-mgmt-redirect', 'app_vars', array(
+			'url' => home_url()
+			)
+		);
+		return false;
+	}
+
+	if ( isset( $_POST['privacy_data_police_action'] ) && $_POST['privacy_data_police_action'] == 'Accept' ) {
+		if ( isset( $_POST['privacy_data_police'] ) ) {
+			update_user_meta( $user_id, 'privacy_data_police', true );
+			return false;
+		} else {
+			$message = '<p style="
+							font-size: 1.5em;
+							line-height: 1.533333333333;
+							padding: 0 0 1.533333333333em 0;
+						" class="error">Please check the checkbox to accept our privacy data policy.</p>';
+		}
+	}
+
+	$overlay = '<div class="overlay_data_police main_color" style="
+    position: fixed;
+    padding: 100px 0px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 9999999999999;
+	">
+		<div class="innerlay_data_police" style="
+			background: white;
+			width: 70%;
+			height: inherit;
+			max-height: max-content;
+			margin: auto;
+			padding: 10px;
+			overflow: auto;
+			position: relative;
+		">
+			'. $message .'
+			<h3> Welcome back, </h3>
+			<p style="
+				font-size: 1.5em;
+				line-height: 1.533333333333;
+				padding: 0 0 1.533333333333em 0;
+			"> you have  to update your privacy settings! <br>
+			Please accept our privacy data police to continue. Otherwise you have to delete your account...</a>  <br> <br> </p>
+			
+			<form id="privacy_data_police_form" action="" method="post">
+	
+				<div class="form-row">
+					<label style="display: block; font-weight: bold; font-size: 1.5em;" for="privacy_data_police"> Accept the privacy data policy </label>
+					<input type="checkbox" name="privacy_data_police" id="privacy_data_police" class="input" value="" />
+					<p style="
+						font-size: 1.5em;
+						line-height: 1.533333333333;
+						padding: 0 0 1.533333333333em 0;
+					">Please read our privacy data policy carefully. <a href="https://tramprennen.org/wp-content/uploads/2018/06/Datenschutzerkl%C3%A4rungTRen.pdf" target="_blank">You will find it here.</a> </p>
+				</div>
+
+				<div class="form-row">
+					<input type="submit" name="privacy_data_police_action" id="privacy_data_police_action" value="Accept" />
+				</div>
+
+				<div class="form-row">
+					<input type="submit" name="privacy_data_police_action" id="privacy_data_police_action" 
+					value="Delete my account" onclick="if ( confirm(\' Do you really want to delete your account? This will be permanent and cannot be undone! \') ) { return true; } return false;"
+				}/>
+				</div>
+
+			</form>
+		</div>
+	</div>';
+	
+	echo $overlay;
+} 
+//add_action('init', 'check_privacy_data_option');
+add_action('wp_footer', 'check_privacy_data_option');
+
+/* Run redirect after login */
+function admin_default_page( $url, $request, $user ) {
+	if( $user && is_object( $user ) && is_a( $user, 'WP_User' ) ) {
+		$user_privacy = get_user_meta($user->ID, 'privacy_data_police');
+		
+		if ( $user_privacy[0] != '1' ) {
+			error_log('redirect home url: '  . "\n", 3,  'D:\xampp\htdocs\Tramprennen\my_errors.log');
+		
+			return get_home_url();
+		}
+	}
+	return $url;
+}
+add_filter('login_redirect', 'admin_default_page', 10, 3 );
 
 /* SECONDARY FILES
 ----------------------------------------- */
 
 // none so far
-
-
-/* UPDATE NAG
------------------------------------------ */
-
-// temporary "fix"
-// The current (parent) theme is incompatible with WordPress 4.0 and up...
-
-function remove_core_updates()
-{
-	global $wp_version;
-	return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
-}
-add_filter('pre_site_transient_update_core','remove_core_updates');
-add_filter('pre_site_transient_update_plugins','remove_core_updates');
-add_filter('pre_site_transient_update_themes','remove_core_updates');
 
 ?>

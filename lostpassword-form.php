@@ -20,6 +20,8 @@
 		</div>
 
 	</form>
+	
+	<p align="center"> <a href="https://tramprennen.org/privacy-data-policy/">Privacy data police</a> </p>
 
 	<?php $template->the_action_links( array( 'lostpassword' => false ) ); ?>
 
