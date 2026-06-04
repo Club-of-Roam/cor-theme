@@ -21,11 +21,14 @@
 			<!-- <p id="reg_passmail<?php $template->the_instance(); ?>"><?php echo apply_filters( 'tml_register_passmail_template_message', __( 'A password will be e-mailed to you.', 'theme-my-login' ) ); ?></p> -->
 		</div>
 		
-		/*<div class="form-row check-row column-row">
+		/*
+		<div class="form-row check-row column-row">
 			<label for="privacy_data_police<?php $template->the_instance(); ?>"><?php _e( 'Accept the privacy data police', 'hhh-theme' ) ?></label>
 			<input type="checkbox" name="privacy_data_police" id="privacy_data_police<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value( 'privacy_data_police' ); ?>" />
 			<p>Please read our privacy data police carefully. <a href="https://tramprennen.org/privacy-data-policy/">You will find it here.</a> </p>
-		</div>*/
+		</div>
+		*/
+		//04.06.2026 Privacy Policy wurde auskommentiert, da die neue Wordpressversion die Abfrage automatisch macht und dadurch den Fehler gegeheb hat, dass die Checkbox bei der Registrierung nicht mehr gezeigt wurde. von Philipp Weckesser
 
 		<div class="form-row">
 			<input type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php esc_attr_e( 'Register', 'hhh-theme' ); ?>" />
