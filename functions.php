@@ -47,6 +47,27 @@ function cor_theme_load_scripts() {
 add_action ( 'wp_enqueue_scripts', 'cor_theme_load_scripts' );
 
 
+/* Polylang instead of WPML
+----------------------------------------- */
+
+function append_polylang_func() {
+	$option = avia_get_option( 'wpml_header_lang_flags' );
+
+	if ( 'hide_all' == $option || ! function_exists( 'pll_the_languages' ) ) {
+		return;
+	}
+
+	echo '<ul class="lang_switcher_polylang">' . pll_the_languages( [
+			'show_flags' => 1,
+			'show_names' => 0,
+			'echo'       => 0,
+		] ) . '</ul>';
+}
+
+add_action( 'avia_meta_header', 'append_polylang_func' );
+add_action( 'ava_main_header_sidebar', 'append_polylang_func' );
+
+
 /* MODIFICATIONS OF PARENT
 ----------------------------------------- */
 

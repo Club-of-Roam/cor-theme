@@ -6,7 +6,7 @@
  Author URI:   http://tramprennen.org
  Author Email: info@tramprennen.org
  Template:     enfold
- Version:      1.1
+ Version:      1.2
  Tags:         hitchhiking rocks
  Text Domain:  cor
 */
@@ -335,6 +335,10 @@ div.read-more-link {
 /* HEADER
 ----------------------------------------- */
 
+.html_header_sidebar #top #header {
+	position: fixed;
+}
+
 .header_bg {
 	opacity:1;
 	filter:alpha(opacity=100); /* For IE8 and earlier */
@@ -401,26 +405,13 @@ nav {
 }
 
 header a span.language_flag img {
-	-webkit-filter: grayscale(100%);
-	-webkit-filter: grayscale(1);
 	filter: grayscale(100%);
-
-	filter: url('url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");');
-	filter: gray;
-
 	opacity: .7;
 }
 
 header a span.language_flag img:hover {
-	-webkit-filter: grayscale(80%);
-	-webkit-filter: grayscale(.8);
 	filter: grayscale(80%);
-
-	filter: url('url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");');
-	filter: gray;
-
 	opacity: 1;
-
 	box-shadow: 0 0 10px #e2007a;
 }
 
@@ -433,6 +424,26 @@ div#header-image {
 	height: 100%;
 	background-color: #000000;
 	display: none;
+}
+
+
+/* HEADER Language switch
+----------------------------------------- */
+#header .lang_switcher_polylang {
+	display: flex;
+	margin: 10px 10px 10px 20px;
+}
+
+#header .lang_switcher_polylang .lang-item {
+	margin-right: 10px;
+}
+
+#header .lang_switcher_polylang .lang-item.current-lang img:not(:hover) {
+	filter: grayscale(30%);
+}
+
+#header .lang_switcher_polylang .lang-item img:not(:hover) {
+	filter: grayscale(50%);
 }
 
 
