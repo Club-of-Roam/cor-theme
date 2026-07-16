@@ -10,16 +10,19 @@ as well as the user-panel at the top of the page:
 ----------------------------------------- */
 
 .login {
-	padding: 0;
+    padding: 0;
 }
+
 .user-panel .login {
-	padding: 0;
+    padding: 0;
 }
+
 .login h2 {
-	color: #d2853a;
+    color: #d2853a;
 }
+
 div.login-widget {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 
@@ -27,25 +30,29 @@ div.login-widget {
 ----------------------------------------- */
 
 .tml-action-links {
-	margin-top: 0;
+    margin-top: 0;
 }
+
 .tml-action-links li {
-	list-style: none;
-	margin: 0 !important;
-	padding: 0 !important;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
 }
+
 .tml-action-links a {
 }
+
 .tml-action-links a:hover,
 .tml-action-links a:active {
-	color: #ffff00;
-	text-shadow: 0 0 1px #ffffff;
+    color: #ffff00;
+    text-shadow: 0 0 1px #ffffff;
 }
+
 .top-bar .tml-action-links li {
-	padding: 0;
-	margin: 0;
-	float: left;
-	clear: both;
+    padding: 0;
+    margin: 0;
+    float: left;
+    clear: both;
 }
 
 
@@ -54,22 +61,27 @@ div.login-widget {
 
 .user-panel h2,
 .user-panel h2 a {
-	color: #d2853a;
-	margin: 5px 0 0;
+    color: #d2853a;
+    margin: 5px 0 0;
 }
+
 .no-touch .user-panel h2 a:hover,
 .user-panel h2 a:active {
-	text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 5px #ffffff;
 }
+
 .user-panel h4 {
-	color: #ffffff;
+    color: #ffffff;
 }
+
 .tml-user-links {
-	float: left;
+    float: left;
 }
+
 .tml-user-links li {
-	display: inline;
+    display: inline;
 }
+
 .tml-user-links a {
     font-family: GSC, monospace;
     font-size: 1.6em;
@@ -79,10 +91,11 @@ div.login-widget {
     line-height: 1;
     padding: 5px 0 0 0;
 }
+
 .no-touch .tml-user-links a:hover,
 .tml-user-links a:active {
-	color: #ffffff;
-	text-shadow: 0 0 1px #ffffff;
+    color: #ffffff;
+    text-shadow: 0 0 1px #ffffff;
 }
 
 
@@ -91,56 +104,67 @@ div.login-widget {
 ----------------------------------------- */
 
 .pass-row p {
-	font-size: 1em !important;
-	overflow: hidden;
+    font-size: 1em !important;
+    overflow: hidden;
 }
+
 .pass-row p:first-child {
-	padding-top: 0;
+    padding-top: 0;
 }
+
 .pass-row p input {
-	padding-top: 0;
+    padding-top: 0;
 }
+
 .pass-mail-row {
-	padding: 0;
+    padding: 0;
 }
+
 .pass-mail-row p {
-	padding: .25em 0;
+    padding: .25em 0;
 }
+
 #pass-strength-result {
-	font-family: GS, 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
-	float: right !important; /* really? */
-	width: 48%; /* really? */
+    font-family: GS, 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+    float: right !important; /* really? */
+    width: 48%; /* really? */
     border: 2px solid #bbbbbb;
-	border-radius: 4px;
-	font-size: 1.2em;
+    border-radius: 4px;
+    font-size: 1.2em;
     margin: 0;
     padding: .25em .166666667em; /* set the same as text inputs */
     text-align: center;
-	color: #222222;
+    color: #222222;
 }
+
 #pass-strength-result.strong,
 #pass-strength-result.short {
     font-weight: 700;
 }
+
 #pass-strength-result {
     background: #999999;
 }
+
 #pass-strength-result.short {
     background-color: #f19fc1;
     border-color: #e9619c !important;
 }
+
 #pass-strength-result.bad {
     background-color: #e3cf9a;
     border-color: #bba259 !important;
 }
+
 #pass-strength-result.good {
     background-color: #d5ecf1;
     border-color: #487f13 !important;
 }
+
 #pass-strength-result.strong {
     background-color: #7ec5e0;
     border-color: #82df29 !important;
-	color: #ffffff;
+    color: #ffffff;
 }
 
 
@@ -151,6 +175,7 @@ div.login-widget {
 .tml-user-links a {
     transition: all 0.3s;
 }
+
 .vca-user-links a span {
     transition: all 0.3s;
 }
