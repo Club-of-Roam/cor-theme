@@ -1,29 +1,32 @@
-function pilleSetupLabel() {
-	if (jQuery('.check-row input').length) {
-		jQuery('.check-row').each(function(){
-			jQuery(this).addClass('check-off');
-			jQuery(this).removeClass('check-on');
-		});
-		jQuery('.check-row input:checked').each(function(){
-			jQuery(this).parent('div').addClass('check-on');
-			jQuery(this).parent('div').removeClass('check-off');
-		});
-	};
-	if (jQuery('.radio-row input').length) {
-		jQuery('.radio-row').each(function(){ 
-			jQuery(this).addClass('radio-off');
-			jQuery(this).removeClass('radio-on');
-		});
-		jQuery('.radio-row input:checked').each(function(){ 
-			jQuery(this).parent('div').addClass('radio-on');
-			jQuery(this).parent('div').removeClass('radio-off');
-		});
-	};
-};
+(($) => {
+	const pilleSetupLabel = () => {
+		if ($('.check-row input').length) {
+			$('.check-row').each(() => {
+				$(this).addClass('check-off');
+				$(this).removeClass('check-on');
+			});
+			$('.check-row input:checked').each(() => {
+				$(this).parent('div').addClass('check-on');
+				$(this).parent('div').removeClass('check-off');
+			});
+		}
 
-jQuery(document).ready(function() {
-	jQuery('.check-row label, .radio-row label').click(function() {
+		if ($('.radio-row input').length) {
+			$('.radio-row').each(() => {
+				$(this).addClass('radio-off');
+				$(this).removeClass('radio-on');
+			});
+			$('.radio-row input:checked').each(() => {
+				$(this).parent('div').addClass('radio-on');
+				$(this).parent('div').removeClass('radio-off');
+			});
+		}
+	};
+
+	$(() => {
+		$('.check-row label, .radio-row label').on('click', () => {
+			pilleSetupLabel();
+		});
 		pilleSetupLabel();
 	});
-	pilleSetupLabel(); 
-});
+})(jQuery);

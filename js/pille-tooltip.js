@@ -1,45 +1,51 @@
-function tooltipNewElement(newid) {
-	if(document.createElement) {
-		var el = document.createElement('div');
-		el.id = newid;
-		with(el.style) {
-			display = 'none';
-			position = 'absolute';
-		}
-		el.innerHTML = '&nbsp;';
-		document.body.appendChild(el);
-	}
-}
+/**
+ * @param {string} newId
+ * @return {HTMLDivElement}
+ */
+const tooltipNewElement = (newId) => {
+	const el = document.createElement('div');
+	el.id = newId;
+	el.style.display = 'none';
+	el.style.position = 'absolute';
+	el.innerHTML = '&nbsp;';
+	document.body.appendChild(el);
 
-function tooltipGetMousePosition(e) {
-	var ie5 = (document.getElementById && document.all);
-	var ns6 = (document.getElementById && !document.all);
-	var ua = navigator.userAgent.toLowerCase();
-	var isapple = (ua.indexOf('applewebkit') != -1 ? 1 : 0);
-	var offsetx = 12;
-	var offsety =  8;
-	if(document.getElementById) {
-		var iebody = (document.compatMode && document.compatMode != 'BackCompat') ? document.documentElement : document.body;
-		var pagex = ( (ie5) ? iebody.scrollLeft : window.pageXOffset );
-		var pagey = ( (ie5) ? iebody.scrollTop : window.pageYOffset );
-		var mousex = (ie5) ? event.x : (ns6) ? clientX = e.clientX : false;
-		var mousey = (ie5) ? event.y : (ns6) ? clientY = e.clientY:false;
-		var lixlpixel_tooltip = document.getElementById('tooltip');
-		lixlpixel_tooltip.style.left = (mousex+pagex+offsetx) + 'px';
-		lixlpixel_tooltip.style.top = (mousey+pagey+offsety) + 'px';
-	}
-}
+	return el;
+};
 
-function tooltip(tip) {
-	if( ! document.getElementById('tooltip') ) tooltipNewElement('tooltip');
-	var lixlpixel_tooltip = document.getElementById('tooltip');
-	lixlpixel_tooltip.innerHTML = tip;
-	lixlpixel_tooltip.style.display = 'block';
+/**
+ * @param {MouseEvent} event
+ */
+const tooltipGetMousePosition = (event) => {
+	const offsetX = 12;
+	const offsetY = 8;
+
+	const pageX = window.scrollX;
+	const pageY = window.scrollY;
+
+	const mouseX = event.clientX;
+	const mouseY = event.clientY;
+
+	const tooltipEl = document.getElementById('tooltip');
+	tooltipEl.style.left = `${mouseX + pageX + offsetX}px`;
+	tooltipEl.style.top = `${mouseY + pageY + offsetY}px`;
+};
+
+/**
+ * @param {string} tip
+ */
+const tooltip = (tip) => {
+	const tooltipEl =
+		document.getElementById('tooltip') ?? tooltipNewElement('tooltip');
+	tooltipEl.innerHTML = tip;
+	tooltipEl.style.display = 'block';
 	document.onmousemove = tooltipGetMousePosition;
-}
+};
 
-function exit() {
-	if ( null != document.getElementById('tooltip') ) {
-		document.getElementById('tooltip').style.display = 'none';
+const exit = () => {
+	const tooltipEl = (document.getElementById('tooltip').style.display =
+		'none');
+	if (tooltipEl !== null) {
+		tooltipEl.style.display = 'none';
 	}
-}
+};
