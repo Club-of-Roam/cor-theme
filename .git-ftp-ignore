@@ -1,2 +1,19 @@
-logs/.*
-.*\~
+# all files in the logs directory
+logs/
+# all files ending with ~
+*~
+# all files starting with a dot
+.*
+# all directories starting with a dot
+.*/
+# node and composer packages
+node_modules/
+vendor/
+# composer files
+composer.json
+composer.lock
+# npm files
+package.json
+package-lock.json
+# eslint config file
+.eslint.config.mjs
