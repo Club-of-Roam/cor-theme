@@ -94,6 +94,11 @@ function append_polylang_func() {
 add_action( 'avia_meta_header', 'append_polylang_func' );
 add_action( 'ava_main_header_sidebar', 'append_polylang_func' );
 
+/**
+ * Turn off canonical URL check for Polylang.
+ * This fixes the issue that Polylang redirects to the default language URL if both posts have the same name.
+ */
+add_filter( 'pll_check_canonical_url', '__return_false' );
 
 /**
  * Custom home_url() function to use Polylang.
