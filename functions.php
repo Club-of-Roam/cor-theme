@@ -681,6 +681,28 @@ function tml_action_url( string $url, string $action ): string {
 
 add_filter( 'tml_action_url', 'tml_action_url', 10, 2 );
 
+/**
+ * Sets a 404 error for wp-login.php.
+ * (Replaces 'Private Login' of TML security module)
+ *
+ * @see https://developer.wordpress.org/reference/hooks/init/
+ */
+function disable_wp_login() {
+	global $wp_query, $pagenow;
+
+	if ( 'wp-login.php' === $pagenow ) {
+		$wp_query->set_404();
+		status_header( 404 );
+		nocache_headers();
+
+		$template = get_404_template();
+		include $template;
+		exit;
+	}
+}
+
+add_action( 'init', 'disable_wp_login' );
+
 /*
 SECONDARY FILES
 -----------------------------------------
