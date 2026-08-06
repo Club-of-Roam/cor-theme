@@ -37,13 +37,10 @@ div.login-widget {
 	padding: 0 !important;
 }
 
-.tml-action-links a {
-}
-
 .tml-action-links a:hover,
 .tml-action-links a:active {
-	color: #ffff00;
-	text-shadow: 0 0 1px #ffffff;
+	color: #ff0;
+	text-shadow: 0 0 1px #fff;
 }
 
 .top-bar .tml-action-links li {
@@ -68,11 +65,11 @@ input[type="checkbox"] {
 
 .no-touch .user-panel h2 a:hover,
 .user-panel h2 a:active {
-	text-shadow: 0 0 5px #ffffff;
+	text-shadow: 0 0 5px #fff;
 }
 
 .user-panel h4 {
-	color: #ffffff;
+	color: #fff;
 }
 
 .tml-user-links {
@@ -87,7 +84,7 @@ input[type="checkbox"] {
 	font-family: GSC, monospace;
 	font-size: 1.6em;
 	font-weight: 400;
-	color: #ffffff;
+	color: #fff;
 	display: inline-block;
 	line-height: 1;
 	padding: 5px 0 0 0;
@@ -95,8 +92,8 @@ input[type="checkbox"] {
 
 .no-touch .tml-user-links a:hover,
 .tml-user-links a:active {
-	color: #ffffff;
-	text-shadow: 0 0 1px #ffffff;
+	color: #fff;
+	text-shadow: 0 0 1px #fff;
 }
 
 /* PASSWORD SECTION OF
@@ -128,22 +125,19 @@ input[type="checkbox"] {
 	font-family: GS, "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 	float: right !important; /* really? */
 	width: 48%; /* really? */
-	border: 2px solid #bbbbbb;
+	border: 2px solid #bbb;
 	border-radius: 4px;
 	font-size: 1.2em;
 	margin: 0;
 	padding: 0.25em 0.166666667em; /* set the same as text inputs */
 	text-align: center;
-	color: #222222;
+	color: #222;
+	background: #999;
 }
 
 #pass-strength-result.strong,
 #pass-strength-result.short {
 	font-weight: 700;
-}
-
-#pass-strength-result {
-	background: #999999;
 }
 
 #pass-strength-result.short {
@@ -164,7 +158,7 @@ input[type="checkbox"] {
 #pass-strength-result.strong {
 	background-color: #7ec5e0;
 	border-color: #82df29 !important;
-	color: #ffffff;
+	color: #fff;
 }
 
 /* ANIMATIONS

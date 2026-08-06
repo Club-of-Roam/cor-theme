@@ -36,7 +36,7 @@ Borders, Darker			Grey				#bbbbbb
 ----------------------------------------- */
 
 /*noinspection CssUnknownTarget*/
-@import url("../enfold/style.css");
+@import url(../enfold/style.css);
 
 /* RESET
 ----------------------------------------- */
@@ -73,7 +73,7 @@ img.el_before_av_heading {
 
 body #main {
 	word-wrap: break-word;
-	background-color: #ffffff; /* bit of a hack */
+	background-color: #fff; /* bit of a hack */
 }
 
 /* TYPO
@@ -298,6 +298,7 @@ p.error {
 ----------------------------------------- */
 
 .entry-content-wrapper .post-title {
+
 	/* Mixture of h3/h4 & h5/h6 */
 	font-size: 1.8em;
 	font-weight: 200;
@@ -309,6 +310,7 @@ p.error {
 }
 
 .widgettitle {
+
 	/* In accordance with h5/h6 */
 	font-size: 1.8em;
 	font-weight: 200;
@@ -359,7 +361,7 @@ div.read-more-link {
 }
 
 div.title_container {
-	background: #ffffff;
+	background: #fff;
 }
 
 span.breadcrumb-trail span.trail-before {
@@ -391,7 +393,7 @@ nav {
 #top .av-main-nav > li > a:hover,
 #top .av-main-nav ul a:hover {
 	text-shadow: 0 0 1px #e2007a;
-	color: #ffffff;
+	color: #fff;
 	text-decoration: none !important;
 }
 
@@ -409,7 +411,7 @@ nav {
 #header.header_color .main_menu ul:first-child > li.active-parent-item > a,
 #top #header.header_color .main_menu .menu ul .current_page_item > a,
 #top #header.header_color .main_menu .menu ul .current-menu-item > a {
-	color: #ffffff;
+	color: #fff;
 }
 
 header a span.language_flag img {
@@ -429,7 +431,7 @@ header a span.language_flag img:hover {
 div#header-image {
 	width: 100%;
 	height: 100%;
-	background-color: #000000;
+	background-color: #000;
 	display: none;
 }
 
@@ -525,7 +527,6 @@ label {
 .form-row input[type="number"],
 .form-row input[type="tel"],
 .form-row input,
-.form-row input,
 .form-row textarea,
 .form-row select {
 	box-sizing: border-box;
@@ -566,7 +567,7 @@ label {
 	text-align: left;
 	font-size: 1.4em;
 	margin-right: 21px;
-	color: #ffffff;
+	color: #fff;
 	z-index: 10;
 }
 
@@ -624,7 +625,7 @@ span.toggle_icon {
 div#main p.toggler,
 div#main p.toggler span.toggle_icon,
 div#main p.toggler span.toggle_icon span {
-	border-color: #bbbbbb;
+	border-color: #bbb;
 }
 
 div#main p.toggler:hover span.toggle_icon,
@@ -636,7 +637,7 @@ div#main .toggle_content {
 	padding: 2.3em 2.2em;
 	margin: 0;
 	border-bottom: none;
-	border-color: #bbbbbb;
+	border-color: #bbb;
 }
 
 div#main .toggle_content p:last-child {
