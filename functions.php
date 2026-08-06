@@ -29,12 +29,6 @@ add_action( 'after_setup_theme', 'cor_theme_setup' );
  */
 function cor_theme_load_scripts() {
 	if ( ! is_admin() ) {
-		// TODO: Remove this and delete file to use original version from enfold theme.
-		/* Adjustment of parent theme */
-		wp_deregister_script( 'avia-shortcodes' );
-		wp_register_script( 'avia-shortcodes', get_stylesheet_directory_uri() . '/js/shortcodes.js', [ 'jquery' ], '1.1', true );
-		wp_enqueue_script( 'avia-shortcodes' );
-
 		/* Register custom scripts */
 		wp_register_script( 'pille-tooltip', get_stylesheet_directory_uri() . '/js/pille-tooltip.js', false, '2014-07-14-01', true );
 
