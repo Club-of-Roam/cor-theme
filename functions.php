@@ -145,6 +145,13 @@ function cor_unset_copyright(): string {
 
 add_filter( 'kriesi_backlink', 'cor_unset_copyright' );
 
+/** Add current year shortcode to use it in the copyright notice */
+function year_shortcode() {
+	return gmdate( 'Y' );
+}
+
+add_shortcode( 'year', 'year_shortcode' );
+
 
 /**
  * Add fonts.
