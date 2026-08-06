@@ -7,8 +7,8 @@
 	$('img').parent('a').addClass('contains-image');
 
 	// temporary hack
-	$('span.copyright').each(() => {
-		$(this).text(
+	$('span.copyright').each((_, element) => {
+		$(element).text(
 			`copylefted 2008 - ${new Date().getFullYear()}, Club of Roam - Autostop!`
 		);
 	});
