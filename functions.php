@@ -50,7 +50,6 @@ function cor_theme_load_scripts() {
 		);
 		// TODO: Remove this and delete file. It is not used anymore.
 		wp_register_script( 'jquery-scrollTo', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.js', [ 'jquery' ], '2014-05-01-01', true );
-		wp_register_script( 'pille-baseline-grid', get_stylesheet_directory_uri() . '/js/pille-baseline-grid.js', [ 'jquery' ], '2014-07-14-01', true );
 		wp_register_script( 'pille-form-styling', get_stylesheet_directory_uri() . '/js/pille-form-styling.js', [ 'jquery' ], '2014-07-14-01', true );
 		wp_register_script( 'pille-tooltip', get_stylesheet_directory_uri() . '/js/pille-tooltip.js', false, '2014-07-14-01', true );
 
@@ -58,7 +57,6 @@ function cor_theme_load_scripts() {
 
 		// TODO: Remove this and delete file. It is not used anymore.
 		wp_enqueue_script( 'jquery-scrollTo' );
-		wp_enqueue_script( 'pille-baseline-grid' );
 		wp_enqueue_script( 'pille-tooltip' );
 	}
 }
