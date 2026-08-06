@@ -246,7 +246,8 @@ div.read-more-link a,
 	text-decoration: none;
 }
 
-a.contains-image,
+a:has(> img),
+a:has(> svg),
 header a {
 	border: none !important;
 }
