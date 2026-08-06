@@ -440,7 +440,17 @@ div#header-image {
 }
 
 #header .lang_switcher_polylang .lang-item {
-	margin-right: 10px;
+	margin-right: 12px;
+}
+
+#header .lang_switcher_polylang .lang-item .contains-image {
+	height: 24px;
+	display: flex;
+	justify-content: center;
+}
+
+#header .lang_switcher_polylang .lang-item img {
+	width: 24px;
 }
 
 #header .lang_switcher_polylang .lang-item.current-lang img:not(:hover) {
