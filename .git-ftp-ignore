@@ -16,4 +16,6 @@ composer.lock
 package.json
 package-lock.json
 # eslint config file
-.eslint.config.mjs
+eslint.config.mjs
+# stylelint config file
+stylelint.config.mjs
