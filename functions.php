@@ -31,9 +31,11 @@ function cor_theme_load_scripts() {
 	if ( ! is_admin() ) {
 		/* Register custom scripts */
 		wp_register_script( 'pille-tooltip', get_stylesheet_directory_uri() . '/js/pille-tooltip.js', false, '1.1', true );
+		wp_register_style( 'custom-fonts', get_stylesheet_directory_uri() . '/fonts/custom-fonts.css', false, '1.0' );
 
 		/* Enqueue custom scripts */
 		wp_enqueue_script( 'pille-tooltip' );
+		wp_enqueue_style( 'custom-fonts' );
 	}
 }
 
@@ -126,52 +128,21 @@ function year_shortcode() {
 
 add_shortcode( 'year', 'year_shortcode' );
 
-
 /**
- * Add fonts.
+ * Add custom fonts to the theme. The fonts must be loaded in fonts/custom-fonts.css.
  *
- * TODO: Remove this and use self-hosted fonts
+ * @return string[]
  */
-function cor_add_fonts(): array {
-	return [
-		'Web save fonts' => [
-			'Arial'          => 'Arial-websave',
-			'Georgia'        => 'Georgia-websave',
-			'Verdana'        => 'Verdana-websave',
-			'Helvetica'      => 'Helvetica-websave',
-			'Helvetica Neue' => 'Helvetica-Neue,Helvetica-websave',
-			'Lucida'         => '"Lucida-Sans",-"Lucida-Grande",-"Lucida-Sans-Unicode-websave"',
-		],
-		'Google fonts'   => [
-			'Arimo'       => 'Arimo',
-			'Cardo'       => 'Cardo',
-			'Droid Sans'  => 'Droid Sans',
-			'Droid Serif' => 'Droid Serif',
-			'Kameron'     => 'Kameron',
-			'Lato'        => 'Lato:300,400,700',
-			'Lora'        => 'Lora',
-			'Maven Pro'   => 'Maven Pro',
-			'Nunito'      => 'Nunito:300,600',
-			'Open Sans'   => 'Open Sans:400,600',
-			'Raleway'     => 'Raleway',
-		],
-	];
+function add_custom_fonts(): array {
+	return [ 'Raleway' => 'Raleway' ];
 }
 
-add_filter( 'avf_google_content_font', 'cor_add_fonts' );
+add_filter( 'avf_available_custom_fonts', 'add_custom_fonts' );
 
 
-/**
- * Load Google Web Font Raleway.
- *
- * TODO: Remove this and use self-hosted fonts
- */
-function cor_google_fonts() {
-	wp_register_style( 'p1lle-google-webfonts', 'https://fonts.googleapis.com/css?family=Raleway:700,900,400,300,200,100', [], '2014-05-18' );
-	wp_enqueue_style( 'p1lle-google-webfonts' );
-}
-
-add_action( 'wp_enqueue_scripts', 'cor_google_fonts' );
+/** Disable Google Fonts (Loading from CDN and Selection) */
+add_filter( 'avf_output_google_webfonts_script', '__return_false' );
+add_filter( 'avf_available_google_fonts', '__return_false' );
 
 
 /**
