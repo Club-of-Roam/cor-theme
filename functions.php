@@ -36,7 +36,6 @@ function cor_theme_load_scripts() {
 		wp_enqueue_script( 'avia-shortcodes' );
 
 		/* Register custom scripts */
-		wp_register_script( 'pille-form-styling', get_stylesheet_directory_uri() . '/js/pille-form-styling.js', [ 'jquery' ], '2014-07-14-01', true );
 		wp_register_script( 'pille-tooltip', get_stylesheet_directory_uri() . '/js/pille-tooltip.js', false, '2014-07-14-01', true );
 
 		/* Enqueue custom scripts */
