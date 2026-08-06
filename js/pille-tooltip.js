@@ -32,8 +32,10 @@ const tooltipGetMousePosition = (event) => {
 };
 
 /**
+ * Show tooltip. Should be called on mouseover event.
  * @param {string} tip
  */
+// eslint-disable-next-line no-unused-vars -- exported function. Used in cor-theme and cor-mgmt.
 const tooltip = (tip) => {
 	const tooltipEl =
 		document.getElementById('tooltip') ?? tooltipNewElement('tooltip');
@@ -42,6 +44,10 @@ const tooltip = (tip) => {
 	document.onmousemove = tooltipGetMousePosition;
 };
 
+/**
+ * Exit tooltip. Should be called on mouseout event.
+ */
+// eslint-disable-next-line no-unused-vars -- exported function. Used in cor-theme and cor-mgmt.
 const exit = () => {
 	const tooltipEl = (document.getElementById('tooltip').style.display =
 		'none');
