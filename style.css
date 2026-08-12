@@ -701,3 +701,14 @@ input[type="button"] {
 .js-active .js-toggle {
 	display: block;
 }
+
+/* EMBED PRIVACY FIX
+----------------------------------------- */
+
+.embed-privacy-container .embed-privacy-overlay a {
+	color: #eee;
+}
+
+.embed-privacy-container .embed-privacy-overlay a:hover {
+	color: var(--enfold-main-color-primary) !important;
+}

@@ -651,6 +651,11 @@ function disable_wp_login() {
 		include $template;
 		exit;
 	}
+
+	// fix for embed privacy plugin
+	if ( class_exists( 'epiphyt\Embed_Privacy\data\Replacer' ) ) {
+		add_filter( 'avf_template_builder_content', [ epiphyt\Embed_Privacy\data\Replacer::class, 'replace_embeds' ], 11 );
+	}
 }
 
 add_action( 'init', 'disable_wp_login' );
