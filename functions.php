@@ -642,7 +642,7 @@ add_filter( 'tml_action_url', 'tml_action_url', 10, 2 );
 function disable_wp_login() {
 	global $wp_query, $pagenow;
 
-	if ( 'wp-login.php' === $pagenow ) {
+	if ( shortcode_exists( 'theme-my-login' ) && 'wp-login.php' === $pagenow ) {
 		$wp_query->set_404();
 		status_header( 404 );
 		nocache_headers();
