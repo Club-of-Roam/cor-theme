@@ -35,11 +35,11 @@
 		</div>
 
 		<div class="form-row check-row column-row">
+			<input type="checkbox" name="privacy_data_police" id="privacy_data_police<?php $template->the_instance(); ?>"
+					class="input" value="<?php $template->the_posted_value( 'privacy_data_police' ); ?>" />
 			<label for="privacy_data_police<?php $template->the_instance(); ?>">
 				<?php esc_html_e( 'Accept the privacy data policy', 'cor-theme' ); ?>
 			</label>
-			<input type="checkbox" name="privacy_data_police" id="privacy_data_police<?php $template->the_instance(); ?>"
-					class="input" value="<?php $template->the_posted_value( 'privacy_data_police' ); ?>" />
 			<?php wp_nonce_field( 'accept-privacy-data-police-at-register', 'privacy_data_police_nonce' ); ?>
 			<p>
 				<?php esc_html_e( 'Please read our privacy data policy carefully.', 'cor-theme' ); ?>
