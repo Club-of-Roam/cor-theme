@@ -40,7 +40,7 @@
 			</label>
 			<input type="checkbox" name="privacy_data_police" id="privacy_data_police<?php $template->the_instance(); ?>"
 					class="input" value="<?php $template->the_posted_value( 'privacy_data_police' ); ?>" />
-			<?php wp_nonce_field( 'accept-privacy-data-police-at-register', 'privacy_data_police_nonce' ); ?> ?>
+			<?php wp_nonce_field( 'accept-privacy-data-police-at-register', 'privacy_data_police_nonce' ); ?>
 			<p>
 				<?php esc_html_e( 'Please read our privacy data policy carefully.', 'cor-theme' ); ?>
 				<a href="<?php echo esc_url( cor_home_url( '/home/privacy-data-policy' ) ); ?>">
