@@ -654,12 +654,34 @@ add_filter( 'tml_action_url', 'tml_action_url', 10, 2 );
  * Sets a 404 error for wp-login.php.
  * (Replaces 'Private Login' of TML security module)
  *
+ * For now, it's only active if TML is active and the security module is not active.
+ *
+ * Also fixes the embed privacy plugin in conjunction with the Avia Layout Builder.
+ *
  * @see https://developer.wordpress.org/reference/hooks/init/
  */
 function disable_wp_login() {
 	global $wp_query, $pagenow;
 
-	if ( shortcode_exists( 'theme-my-login' ) && 'wp-login.php' === $pagenow ) {
+	// fix for embed privacy plugin
+	if ( class_exists( 'epiphyt\Embed_Privacy\data\Replacer' ) ) {
+		add_filter( 'avf_template_builder_content', [ epiphyt\Embed_Privacy\data\Replacer::class, 'replace_embeds' ], 11 );
+	}
+
+	// Check if the TML plugin is active
+	if ( ! shortcode_exists( 'theme-my-login' ) || ! class_exists( 'Theme_My_Login' ) ) {
+		return;
+	}
+
+	$theme_my_login_admin = Theme_My_Login::get_object();
+	$active_modules       = $theme_my_login_admin->get_option( 'active_modules', [] );
+
+	// If the security module from TML is active, we let the plugin do its job
+	if ( in_array( 'security/security.php', $active_modules, true ) ) {
+		return;
+	}
+
+	if ( 'wp-login.php' === $pagenow ) {
 		$wp_query->set_404();
 		status_header( 404 );
 		nocache_headers();
@@ -667,11 +689,6 @@ function disable_wp_login() {
 		$template = get_404_template();
 		include $template;
 		exit;
-	}
-
-	// fix for embed privacy plugin
-	if ( class_exists( 'epiphyt\Embed_Privacy\data\Replacer' ) ) {
-		add_filter( 'avf_template_builder_content', [ epiphyt\Embed_Privacy\data\Replacer::class, 'replace_embeds' ], 11 );
 	}
 }
 
