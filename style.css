@@ -6,7 +6,7 @@ Author:       Club of Roam — Autostop! e.V.
 Author URI:   https://tramprennen.org
 Author Email: info@tramprennen.org
 Template:     enfold
-Version:      2.0
+Version:      2.0.1
 Tags:         hitchhiking rocks
 Text Domain:  cor-theme
 Domain Path: /languages
@@ -704,5 +704,7 @@ input[type="button"] {
 }
 
 .embed-privacy-container .embed-privacy-overlay a:hover {
+
+	/*noinspection CssUnresolvedCustomProperty*/
 	color: var(--enfold-main-color-primary) !important;
 }
