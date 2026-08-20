@@ -554,9 +554,16 @@ HTML;
 add_action( 'wp_footer', 'check_privacy_data_option' );
 
 
+/*
+TML
+-----------------------------------------
+*/
+
 /**
  * Changes the login redirect to referer if no specific redirect was requested.
  * (Replaces TML redirect module)
+ *
+ * For now, it's only active if TML is active and the custom redirection module is not active.
  *
  * @param string           $redirect_to The redirect destination URL.
  * @param string           $requested_redirect_to The requested redirect destination URL passed as a parameter.
@@ -567,7 +574,16 @@ add_action( 'wp_footer', 'check_privacy_data_option' );
  * @see https://developer.wordpress.org/reference/hooks/login_redirect/
  */
 function login_referer_redirect( string $redirect_to, string $requested_redirect_to, $user ): string {
-	if ( ! $user instanceof WP_User ) {
+	// Check if the user is logged in and the Theme My Login plugin is active
+	if ( ! $user instanceof WP_User || ! shortcode_exists( 'theme-my-login' ) || ! class_exists( 'Theme_My_Login' ) ) {
+		return $redirect_to;
+	}
+
+	$theme_my_login_admin = Theme_My_Login::get_object();
+	$active_modules       = $theme_my_login_admin->get_option( 'active_modules', [] );
+
+	// If the custom redirection module from TML is active, we let the plugin do its job
+	if ( in_array( 'custom-redirection/custom-redirection.php', $active_modules, true ) ) {
 		return $redirect_to;
 	}
 
@@ -632,6 +648,7 @@ function tml_action_url( string $url, string $action ): string {
 }
 
 add_filter( 'tml_action_url', 'tml_action_url', 10, 2 );
+
 
 /**
  * Sets a 404 error for wp-login.php.
