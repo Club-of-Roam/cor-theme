@@ -1,0 +1,212 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CoR Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
+"Language-Team: Pille <pille@tramprennen.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2015-06-30 13:09+0100\n"
+"PO-Revision-Date: 2015-06-30 13:10+0100\n"
+"Language: German\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;esc_attr__;esc_attr_e;__;_e;_x;_ex\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: functions.php:356
+msgid "Login"
+msgstr "Einloggen"
+
+#: login-form.php:19
+#: profile-form.php:35
+#: register-form.php:19
+msgid "Username"
+msgstr "Benutzername"
+
+#: login-form.php:27
+msgid "Password"
+msgstr "Passwort"
+
+#: login-form.php:37
+msgid "Log In"
+msgstr "Einloggen"
+
+#: profile-form.php:70
+#: register-form.php:27
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: register-form.php:54
+msgid "Register"
+msgstr "Registrieren"
+
+#: functions.php:327
+msgid "Edit your user profile & settings"
+msgstr "Dein Benutzerprofil &amp; Einstellungen"
+
+#: functions.php:336
+msgid "Submit race results"
+msgstr "Rennergebnisse abgeben"
+
+#: functions.php:337
+msgid "Submit Points"
+msgstr "Punkte abgeben"
+
+#: functions.php:346
+msgid "Leave"
+msgstr "Verlassen"
+
+#: functions.php:347
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: functions.php:355
+msgid "Login to tramprennen.org"
+msgstr "In tramprennen.org einloggen"
+
+#: resetpass-form.php:40
+#: resetpass-form.php:58
+msgid "Reset Password"
+msgstr "Passwort Zurücksetzen"
+
+#: lostpassword-form.php:21
+msgid "Username or E-mail:"
+msgstr "Benutzername oder E-Mail"
+
+#: lostpassword-form.php:31
+msgid "Get New Password"
+msgstr "Neues Passwort anfordern"
+
+#: profile-form.php:27
+msgid "Name"
+msgstr "Name"
+
+#: profile-form.php:32
+msgid "Your username cannot be changed."
+msgstr "Dein Benutzername kann nicht geändert werden."
+
+#: profile-form.php:45
+msgid "First name"
+msgstr "Vorname"
+
+#: profile-form.php:53
+msgid "Last name"
+msgstr "Nachname"
+
+#: profile-form.php:65
+msgid "Contact Info"
+msgstr "Kontakt Info"
+
+#: profile-form.php:181
+#: profile-form.php:189
+#: resetpass-form.php:44
+msgid "New Password"
+msgstr "Neues Passwort"
+
+#: profile-form.php:186
+msgid "If you would like to change the password type a new one. Otherwise leave this blank."
+msgstr "Wenn du dein Passwort ändern willst, tippe ein neues ein. Sonst lasse das Feld leer."
+
+#: profile-form.php:203
+msgid "Leave for good"
+msgstr "tramprennen.org verlassen"
+
+#: profile-form.php:211
+msgid "Delete my account permanently"
+msgstr "Mein Benutzerkonto unwiderruflich löschen"
+
+#: profile-form.php:223
+msgid "Do you really want to delete your account? This will be permanent and cannot be undone!"
+msgstr "Willst du dein Konto wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden..."
+
+#: profile-form.php:225
+msgid "Are you really a hundred years old???"
+msgstr "Bist du wirklich 100 Jahre alt???"
+
+#: profile-form.php:227
+msgid "Have you really been born on January 1st, 1970?"
+msgstr "Wurdest du wirklich am 1. Januar 1970 geboren?"
+
+#: profile-form.php:230
+msgid "Update Profile"
+msgstr "Profil aktualisieren"
+
+#. Theme Name of the theme
+#: style.css
+msgid "Club of Roam | Tramprennen 2014"
+msgstr ""
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "http://tramprennen.org"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Theme for tramprennen.org, child theme of Kriesi's enfold"
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Johnannes Pilkahn, Merle Zweiundvierzig, Walter Mutter"
+msgstr ""
+
+#: functions.php:413
+msgid "ERROR"
+msgstr "FEHLER"
+
+#: functions.php:414
+msgid "Please accept the privacy data policy."
+msgstr "Bitte akzeptiere die Datenschutzerklärung."
+
+#: functions.php:474
+msgid "Please wait, your account will be deleted soon!"
+msgstr "Bitte warte. Dein Account wird bald gelöscht sein."
+
+#: functions.php:531
+msgid "Please check the checkbox to accept our privacy data policy."
+msgstr "Bitte klicke die Checkbox an, um unsere Datenschutzerklärung zu akzeptieren."
+
+#: functions.php:536
+msgid "Welcome back,"
+msgstr "Willkommen zurück,"
+
+#: functions.php:545
+msgid "you have to update your privacy settings!\\nPlease accept our privacy data policy to continue. Otherwise, you have to delete your account..."
+msgstr "du musst deine Datenschutzeinstellungen aktualisieren!\\nBitte stimme unserer Datenschutzerklärung zu, um fortzufahren. Andernfalls musst du dein Konto löschen..."
+
+#: functions.php:554
+#: register-form.php:39
+msgid "Accept the privacy data policy"
+msgstr "Datenschutzerklärung akzeptieren"
+
+#: functions.php:569
+#: register-form.php:45
+msgid "Please read our privacy data policy carefully."
+msgstr "Bitte lesen Sie unsere Datenschutzerklärung sorgfältig durch."
+
+#: functions.php:573
+#: register-form.php:47
+msgid "You will find it here."
+msgstr "Du findest sie hier."
+
+#: profile-form.php:77
+msgid "About You"
+msgstr "Über dich"
+
+#: profile-form.php:196
+#: resetpass-form.php:50
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+#: login-form.php:46
+#: lostpassword-form.php:41
+#: profile-form.php:237
+#: resetpass-form.php:70
+msgid "Privacy data policy"
+msgstr "Datenschutzerklärung"

@@ -1,0 +1,18 @@
+<ruleset name="WordPress-Custom">
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="cor-theme"/>
+                <element value="h3-mgmt"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="WordPress">
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop"/>
+    </rule>
+</ruleset>
