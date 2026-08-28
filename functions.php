@@ -30,8 +30,17 @@ add_action( 'after_setup_theme', 'cor_theme_setup' );
 function cor_theme_load_scripts() {
 	if ( ! is_admin() ) {
 		/* Register custom scripts */
-		wp_register_script( 'pille-tooltip', get_stylesheet_directory_uri() . '/js/pille-tooltip.js', false, '1.1', true );
-		wp_register_style( 'custom-fonts', get_stylesheet_directory_uri() . '/fonts/custom-fonts.css', false, '1.0' );
+		wp_register_script(
+			'pille-tooltip',
+			get_stylesheet_directory_uri() . '/js/pille-tooltip.js',
+			[],
+			'1.1',
+			[
+				'strategy'  => 'async',
+				'in_footer' => true,
+			]
+		);
+		wp_register_style( 'custom-fonts', get_stylesheet_directory_uri() . '/fonts/custom-fonts.css', [], '1.1' );
 
 		/* Enqueue custom scripts */
 		wp_enqueue_script( 'pille-tooltip' );
