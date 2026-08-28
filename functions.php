@@ -85,15 +85,43 @@ add_action( 'ava_main_header_sidebar', 'append_polylang_func' );
  */
 add_filter( 'pll_check_canonical_url', '__return_false' );
 
+
 /**
- * Custom home_url() function to use Polylang.
+ * Returns the translated home URL.
+ * Don't use this function directly, use cor_home_url() instead.
+ *
+ * @return string
+ */
+function _cor_home_url(): string {
+	$home_url = get_home_url();
+
+	if ( function_exists( 'pll_home_url' ) ) {
+		$home_url = pll_home_url();
+	} elseif ( function_exists( 'icl_get_home_url' ) ) {
+		$home_url = icl_get_home_url();
+	}
+
+	return $home_url;
+}
+
+/**
+ * Returns the translated URL to a given path.
  *
  * @param string $path Optional. Path relative to the home URL. Default empty.
  *
  * @return string
  */
 function cor_home_url( string $path = '' ): string {
-	$post_id = url_to_postid( $path );
+	if ( empty( ltrim( $path, '/' ) ) ) {
+		return _cor_home_url();
+	}
+
+	$post    = get_page_by_path( $path );
+	$post_id = $post ? $post->ID : 0;
+
+	if ( 0 === $post_id ) {
+		$post_id = url_to_postid( $path );
+	}
 
 	if ( $post_id > 0 ) {
 		$translated_post_id = 0;
@@ -107,14 +135,7 @@ function cor_home_url( string $path = '' ): string {
 		return get_permalink( $translated_post_id > 0 ? $translated_post_id : $post_id );
 	}
 
-	$home_url = get_home_url();
-	if ( function_exists( 'pll_home_url' ) ) {
-		$home_url = pll_home_url();
-	} elseif ( function_exists( 'icl_get_home_url' ) ) {
-		$home_url = icl_get_home_url();
-	}
-
-	return $home_url . ltrim( $path, '/' );
+	return _cor_home_url() . ltrim( $path, '/' );
 }
 
 
