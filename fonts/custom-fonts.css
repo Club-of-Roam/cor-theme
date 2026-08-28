@@ -2,6 +2,7 @@
 	font-family: Raleway;
 	font-style: normal;
 	font-weight: 100 900;
+	font-display: swap;
 	src: url(Raleway/Raleway-VariableFont_wght.ttf) format(truetype)
 		tech(variations);
 }
@@ -10,6 +11,7 @@
 	font-family: Raleway;
 	font-style: italic;
 	font-weight: 100 900;
+	font-display: swap;
 	src: url(Raleway/Raleway-Italic-VariableFont_wght.ttf) format(truetype)
 		tech(variations);
 }
