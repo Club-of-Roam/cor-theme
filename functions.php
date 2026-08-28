@@ -459,21 +459,22 @@ function check_privacy_data_option() {
 					<h3>
 HTML;
 		esc_html_e( 'Please wait, your account will be deleted soon!', 'cor-theme' );
+
 		echo <<<'HTML'
 					</h3>
 				</div>
 			</div>
+		<script>
+		    setTimeout(function() {
+                location.replace(
 HTML;
+		echo wp_json_encode( esc_url_raw( cor_home_url() ) );
 
-		wp_enqueue_script( 'h3-mgmt-redirect' );
-
-		wp_localize_script(
-			'h3-mgmt-redirect',
-			'app_vars',
-			[
-				'url' => cor_home_url(),
-			]
-		);
+		echo <<<'HTML'
+		        );
+		    }, 3000);
+		</script>
+HTML;
 
 		return;
 	}
