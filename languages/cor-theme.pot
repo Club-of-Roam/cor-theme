@@ -1,15 +1,15 @@
-# Copyright (C) 2026 Johnannes Pilkahn, Merle Zweiundvierzig, Walter Mutter
+# Copyright (C) 2026 Club of Roam — Autostop! e.V.
 # This file is distributed under the same license as the Club of Roam | Tramprennen 2014 theme.
 msgid ""
 msgstr ""
-"Project-Id-Version: Club of Roam | Tramprennen 2014 1.2\n"
+"Project-Id-Version: Club of Roam | Tramprennen 2014 2.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cor-theme\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-07-21T23:17:16+00:00\n"
+"POT-Creation-Date: 2026-10-23T21:41:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: cor-theme\n"
@@ -22,88 +22,88 @@ msgstr ""
 #. Theme URI of the theme
 #. Author URI of the theme
 #: style.css
-msgid "http://tramprennen.org"
+msgid "https://tramprennen.org"
 msgstr ""
 
 #. Description of the theme
 #: style.css
-msgid "Theme for tramprennen.org, child theme of Kriesi's enfold"
+msgid "Theme for tramprennen.org, child theme of Kriesi's Enfold theme."
 msgstr ""
 
 #. Author of the theme
 #: style.css
-msgid "Johnannes Pilkahn, Merle Zweiundvierzig, Walter Mutter"
+msgid "Club of Roam — Autostop! e.V."
 msgstr ""
 
-#: functions.php:327
+#: functions.php:315
 msgid "Edit your user profile & settings"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:324
 msgid "Submit race results"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:325
 msgid "Submit Points"
 msgstr ""
 
-#: functions.php:346
+#: functions.php:334
 msgid "Leave"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:335
 msgid "Logout"
 msgstr ""
 
-#: functions.php:355
+#: functions.php:343
 msgid "Login to tramprennen.org"
 msgstr ""
 
-#: functions.php:356
+#: functions.php:344
 msgid "Login"
 msgstr ""
 
-#: functions.php:413
+#: functions.php:401
 msgid "ERROR"
 msgstr ""
 
-#: functions.php:414
+#: functions.php:402
 msgid "Please accept the privacy data policy."
 msgstr ""
 
-#: functions.php:474
+#: functions.php:462
 msgid "Please wait, your account will be deleted soon!"
 msgstr ""
 
-#: functions.php:531
+#: functions.php:520
 msgid "Please check the checkbox to accept our privacy data policy."
 msgstr ""
 
-#: functions.php:536
+#: functions.php:525
 msgid "Welcome back,"
 msgstr ""
 
-#: functions.php:545
+#: functions.php:534
 msgid "you have to update your privacy settings!\\nPlease accept our privacy data policy to continue. Otherwise, you have to delete your account..."
 msgstr ""
 
-#: functions.php:554
-#: register-form.php:39
+#: functions.php:543
+#: register-form.php:41
 msgid "Accept the privacy data policy"
 msgstr ""
 
-#: functions.php:569
+#: functions.php:558
 #: register-form.php:45
 msgid "Please read our privacy data policy carefully."
 msgstr ""
 
-#: functions.php:573
+#: functions.php:562
 #: register-form.php:47
 msgid "You will find it here."
 msgstr ""
 
 #: login-form.php:19
-#: profile-form.php:35
+#: profile-form.php:34
 #: register-form.php:19
 msgid "Username"
 msgstr ""
@@ -112,13 +112,13 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: login-form.php:37
+#: login-form.php:40
 msgid "Log In"
 msgstr ""
 
-#: login-form.php:46
+#: login-form.php:48
 #: lostpassword-form.php:41
-#: profile-form.php:237
+#: profile-form.php:235
 #: resetpass-form.php:70
 msgid "Privacy data policy"
 msgstr ""
@@ -135,67 +135,67 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: profile-form.php:32
+#: profile-form.php:31
 msgid "Your username cannot be changed."
 msgstr ""
 
-#: profile-form.php:45
+#: profile-form.php:43
 msgid "First name"
 msgstr ""
 
-#: profile-form.php:53
+#: profile-form.php:51
 msgid "Last name"
 msgstr ""
 
-#: profile-form.php:65
+#: profile-form.php:63
 msgid "Contact Info"
 msgstr ""
 
-#: profile-form.php:70
+#: profile-form.php:68
 #: register-form.php:27
 msgid "E-mail"
 msgstr ""
 
-#: profile-form.php:77
+#: profile-form.php:75
 msgid "About You"
 msgstr ""
 
-#: profile-form.php:181
-#: profile-form.php:189
+#: profile-form.php:179
+#: profile-form.php:187
 #: resetpass-form.php:44
 msgid "New Password"
 msgstr ""
 
-#: profile-form.php:186
+#: profile-form.php:184
 msgid "If you would like to change the password type a new one. Otherwise leave this blank."
 msgstr ""
 
-#: profile-form.php:196
+#: profile-form.php:194
 #: resetpass-form.php:50
 msgid "Confirm Password"
 msgstr ""
 
-#: profile-form.php:203
+#: profile-form.php:201
 msgid "Leave for good"
 msgstr ""
 
-#: profile-form.php:211
+#: profile-form.php:209
 msgid "Delete my account permanently"
 msgstr ""
 
-#: profile-form.php:223
+#: profile-form.php:221
 msgid "Do you really want to delete your account? This will be permanent and cannot be undone!"
 msgstr ""
 
-#: profile-form.php:225
+#: profile-form.php:223
 msgid "Are you really a hundred years old???"
 msgstr ""
 
-#: profile-form.php:227
+#: profile-form.php:225
 msgid "Have you really been born on January 1st, 1970?"
 msgstr ""
 
-#: profile-form.php:230
+#: profile-form.php:228
 msgid "Update Profile"
 msgstr ""
 
