@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: CoR Theme\n"
+"Project-Id-Version: Club of Roam | Tramprennen 2014 2.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Johannes Pilkahn <johannes@pilkahn.org>\n"
-"Language-Team: Pille <pille@tramprennen.org>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2015-06-30 13:09+0100\n"
-"PO-Revision-Date: 2015-06-30 13:10+0100\n"
+"POT-Creation-Date: 2026-10-23T21:41:18+00:00\n"
+"PO-Revision-Date: 2026-10-23T21:41:18+00:00\n"
 "Language: German\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;esc_attr__;esc_attr_e;__;_e;_x;_ex\n"
@@ -17,12 +17,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: functions.php:356
+#: functions.php:344
 msgid "Login"
 msgstr "Einloggen"
 
 #: login-form.php:19
-#: profile-form.php:35
+#: profile-form.php:34
 #: register-form.php:19
 msgid "Username"
 msgstr "Benutzername"
@@ -31,11 +31,11 @@ msgstr "Benutzername"
 msgid "Password"
 msgstr "Passwort"
 
-#: login-form.php:37
+#: login-form.php:40
 msgid "Log In"
 msgstr "Einloggen"
 
-#: profile-form.php:70
+#: profile-form.php:68
 #: register-form.php:27
 msgid "E-mail"
 msgstr "E-Mail"
@@ -44,27 +44,27 @@ msgstr "E-Mail"
 msgid "Register"
 msgstr "Registrieren"
 
-#: functions.php:327
+#: functions.php:315
 msgid "Edit your user profile & settings"
 msgstr "Dein Benutzerprofil &amp; Einstellungen"
 
-#: functions.php:336
+#: functions.php:324
 msgid "Submit race results"
 msgstr "Rennergebnisse abgeben"
 
-#: functions.php:337
+#: functions.php:325
 msgid "Submit Points"
 msgstr "Punkte abgeben"
 
-#: functions.php:346
+#: functions.php:334
 msgid "Leave"
 msgstr "Verlassen"
 
-#: functions.php:347
+#: functions.php:335
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: functions.php:355
+#: functions.php:343
 msgid "Login to tramprennen.org"
 msgstr "In tramprennen.org einloggen"
 
@@ -85,53 +85,53 @@ msgstr "Neues Passwort anfordern"
 msgid "Name"
 msgstr "Name"
 
-#: profile-form.php:32
+#: profile-form.php:31
 msgid "Your username cannot be changed."
 msgstr "Dein Benutzername kann nicht geändert werden."
 
-#: profile-form.php:45
+#: profile-form.php:43
 msgid "First name"
 msgstr "Vorname"
 
-#: profile-form.php:53
+#: profile-form.php:51
 msgid "Last name"
 msgstr "Nachname"
 
-#: profile-form.php:65
+#: profile-form.php:63
 msgid "Contact Info"
 msgstr "Kontakt Info"
 
-#: profile-form.php:181
-#: profile-form.php:189
+#: profile-form.php:179
+#: profile-form.php:187
 #: resetpass-form.php:44
 msgid "New Password"
 msgstr "Neues Passwort"
 
-#: profile-form.php:186
+#: profile-form.php:184
 msgid "If you would like to change the password type a new one. Otherwise leave this blank."
 msgstr "Wenn du dein Passwort ändern willst, tippe ein neues ein. Sonst lasse das Feld leer."
 
-#: profile-form.php:203
+#: profile-form.php:201
 msgid "Leave for good"
 msgstr "tramprennen.org verlassen"
 
-#: profile-form.php:211
+#: profile-form.php:209
 msgid "Delete my account permanently"
 msgstr "Mein Benutzerkonto unwiderruflich löschen"
 
-#: profile-form.php:223
+#: profile-form.php:221
 msgid "Do you really want to delete your account? This will be permanent and cannot be undone!"
 msgstr "Willst du dein Konto wirklich löschen? Dieser Vorgang kann nicht rückgängig gemacht werden..."
 
-#: profile-form.php:225
+#: profile-form.php:223
 msgid "Are you really a hundred years old???"
 msgstr "Bist du wirklich 100 Jahre alt???"
 
-#: profile-form.php:227
+#: profile-form.php:225
 msgid "Have you really been born on January 1st, 1970?"
 msgstr "Wurdest du wirklich am 1. Januar 1970 geboren?"
 
-#: profile-form.php:230
+#: profile-form.php:228
 msgid "Update Profile"
 msgstr "Profil aktualisieren"
 
@@ -140,73 +140,73 @@ msgstr "Profil aktualisieren"
 msgid "Club of Roam | Tramprennen 2014"
 msgstr ""
 
-#. Theme URI of the theme
-#. Author URI of the theme
-#: style.css
-msgid "http://tramprennen.org"
-msgstr ""
-
-#. Description of the theme
-#: style.css
-msgid "Theme for tramprennen.org, child theme of Kriesi's enfold"
-msgstr ""
-
-#. Author of the theme
-#: style.css
-msgid "Johnannes Pilkahn, Merle Zweiundvierzig, Walter Mutter"
-msgstr ""
-
-#: functions.php:413
+#: functions.php:401
 msgid "ERROR"
 msgstr "FEHLER"
 
-#: functions.php:414
+#: functions.php:402
 msgid "Please accept the privacy data policy."
 msgstr "Bitte akzeptiere die Datenschutzerklärung."
 
-#: functions.php:474
+#: functions.php:462
 msgid "Please wait, your account will be deleted soon!"
 msgstr "Bitte warte. Dein Account wird bald gelöscht sein."
 
-#: functions.php:531
+#: functions.php:520
 msgid "Please check the checkbox to accept our privacy data policy."
 msgstr "Bitte klicke die Checkbox an, um unsere Datenschutzerklärung zu akzeptieren."
 
-#: functions.php:536
+#: functions.php:525
 msgid "Welcome back,"
 msgstr "Willkommen zurück,"
 
-#: functions.php:545
+#: functions.php:534
 msgid "you have to update your privacy settings!\\nPlease accept our privacy data policy to continue. Otherwise, you have to delete your account..."
 msgstr "du musst deine Datenschutzeinstellungen aktualisieren!\\nBitte stimme unserer Datenschutzerklärung zu, um fortzufahren. Andernfalls musst du dein Konto löschen..."
 
-#: functions.php:554
-#: register-form.php:39
+#: functions.php:543
+#: register-form.php:41
 msgid "Accept the privacy data policy"
 msgstr "Datenschutzerklärung akzeptieren"
 
-#: functions.php:569
+#: functions.php:558
 #: register-form.php:45
 msgid "Please read our privacy data policy carefully."
 msgstr "Bitte lesen Sie unsere Datenschutzerklärung sorgfältig durch."
 
-#: functions.php:573
+#: functions.php:562
 #: register-form.php:47
 msgid "You will find it here."
 msgstr "Du findest sie hier."
 
-#: profile-form.php:77
+#: profile-form.php:75
 msgid "About You"
 msgstr "Über dich"
 
-#: profile-form.php:196
+#: profile-form.php:194
 #: resetpass-form.php:50
 msgid "Confirm Password"
 msgstr "Passwort bestätigen"
 
-#: login-form.php:46
+#: login-form.php:48
 #: lostpassword-form.php:41
-#: profile-form.php:237
+#: profile-form.php:235
 #: resetpass-form.php:70
 msgid "Privacy data policy"
 msgstr "Datenschutzerklärung"
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://tramprennen.org"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "Theme for tramprennen.org, child theme of Kriesi's Enfold theme."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Club of Roam — Autostop! e.V."
+msgstr ""
