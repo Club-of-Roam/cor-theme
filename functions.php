@@ -66,9 +66,10 @@ function append_polylang_func() {
 
 	$language_switcher = pll_the_languages(
 		[
-			'show_flags' => 1,
-			'show_names' => 0,
-			'echo'       => 0,
+			'show_flags' => true,
+			'show_labels' => '',
+			'show_wrapper' => false,
+			'echo'       => false,
 		]
 	);
 
