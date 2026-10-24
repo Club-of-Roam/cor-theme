@@ -139,6 +139,29 @@ function cor_home_url( string $path = '' ): string {
 	return _cor_home_url() . ltrim( $path, '/' );
 }
 
+/**
+ * Translates page ids for posts-page and front-page.
+ * This is a fix for Polylang with Avia theme.
+ *
+ * @param int|string $pre Page id.
+ *
+ * @return int|string
+ *
+ * @see https://developer.wordpress.org/reference/hooks/pre_option_option/
+ */
+function pre_option_polylang_avia_workaround( $pre ) {
+	if ( $pre && ! is_admin() && function_exists( 'pll_get_post' ) ) {
+		$tr = pll_get_post( (int) $pre );
+
+		return $tr ?: $pre;
+	}
+
+	return $pre;
+}
+
+add_filter( 'pre_option_page_for_posts', 'pre_option_polylang_avia_workaround', 11 );
+add_filter( 'pre_option_page_on_front', 'pre_option_polylang_avia_workaround', 11 );
+
 
 /*
 MODIFICATIONS OF PARENT
